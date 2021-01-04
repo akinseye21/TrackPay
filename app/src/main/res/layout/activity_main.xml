@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    tools:context="com.example.ndif_yemmanuel.trackpay.MainActivity">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_gravity="center_horizontal"
+        android:text="KDSG"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="PAYMENT TRACKER"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="11dp"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:layout_gravity="end"
+        android:layout_marginBottom="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Need help?"
+            android:textColor="#ffffff"
+            android:textSize="9dp"
+            android:textStyle="bold"
+            android:id="@+id/needHelp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/getStarted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/needHelp"
+            android:layout_toLeftOf="@+id/textView"
+            android:layout_toStartOf="@+id/textView"
+            android:text="GET STARTED"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:onClick="move"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/needHelp"
+            android:text=" &gt;"
+            android:textColor="#fa9f1d"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:id="@+id/textView"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:onClick="move"/>
+    </RelativeLayout>
+
+</LinearLayout>

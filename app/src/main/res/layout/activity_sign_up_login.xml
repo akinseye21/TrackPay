@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.ndif_yemmanuel.trackpay.SignUpLogin">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#040e67"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:src="@drawable/img1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/img1"
+            android:textStyle="bold"
+            android:textColor="#ffffff"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please select a user as appropriate"
+            android:textColor="#ffffff"
+            android:textStyle="italic"
+            android:paddingTop="10dp"
+            android:textSize="11dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:paddingTop="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/vendor"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vendors"
+                    android:textStyle="bold"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_black"
+                android:text="LOGIN"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="50dp"
+                android:onClick="vendorlogin"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:text="SIGNUP"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                android:textColor="#ffffff"
+                android:onClick="vendorsignup1"/>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/staff"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Staff"
+                    android:textStyle="bold"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_black"
+                android:text="LOGIN"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="50dp"
+                android:onClick="stafflogin"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_green"
+                android:text="UPDATE"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/mda"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MDAs"
+                    android:textStyle="bold"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_black"
+                android:text="LOGIN"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="50dp"
+                android:onClick="mdalogin"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_green"
+                android:text="UPDATE"
+                android:textStyle="bold"
+                android:textSize="12dp"
+                android:textColor="#ffffff"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

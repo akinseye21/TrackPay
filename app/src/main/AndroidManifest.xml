@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ndif_yemmanuel.trackpay">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ico"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ico"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignUpLogin"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VendorLogin"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".StaffLogin"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MdaLogin"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VendorSignup1"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VendorSignup2"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VendorDashboard"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity android:name=".VendorProfile"></activity>
+    </application>
+
+</manifest>

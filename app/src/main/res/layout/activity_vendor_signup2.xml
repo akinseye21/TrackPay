@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context="com.example.ndif_yemmanuel.trackpay.VendorSignup2">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/vendor_signup_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vendors"
+                    android:textColor="#ffffff"
+                    android:textStyle="normal"
+                    android:textSize="50dp"
+                    android:layout_marginBottom="30dp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/main_vendors"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:id="@+id/img"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img"
+                android:orientation="vertical"
+                android:id="@+id/lin1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Please enter Vendor Unique ID"
+                    android:textStyle="italic"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    android:paddingLeft="20dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/key"
+                        android:layout_marginLeft="20dp"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ededed"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="#000000"
+                        android:textSize="12dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:id="@+id/uniqueid"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lin1"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                android:id="@+id/lin2">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Please enter your password"
+                    android:textStyle="italic"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    android:paddingLeft="20dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/password"
+                        android:layout_marginLeft="20dp"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ededed"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="#000000"
+                        android:textSize="12dp"
+                        android:inputType="textPassword"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:id="@+id/password"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lin2"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                android:id="@+id/lin3">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Repeat password"
+                    android:textStyle="italic"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    android:paddingLeft="20dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/password"
+                        android:layout_marginLeft="20dp"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#ededed"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="#000000"
+                        android:textSize="12dp"
+                        android:inputType="textPassword"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:id="@+id/confirmpassword"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <ProgressBar
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:visibility="invisible"
+                android:id="@+id/progressBar"/>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_yellow"
+                android:text="SIGNUP"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/lin3"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"
+                android:onClick="dashboard"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>
