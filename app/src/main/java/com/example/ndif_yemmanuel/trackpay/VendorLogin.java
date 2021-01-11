@@ -153,7 +153,7 @@ public class VendorLogin extends AppCompatActivity {
                         public void onErrorResponse(VolleyError volleyError) {
                             progressBar.setVisibility(View.GONE);
 
-                            Toast.makeText(VendorLogin.this, "Error! Please try agaim", Toast.LENGTH_LONG).show();
+                            Toast.makeText(VendorLogin.this, "Error! Please try again", Toast.LENGTH_LONG).show();
                         }
                     }){
                 @Override

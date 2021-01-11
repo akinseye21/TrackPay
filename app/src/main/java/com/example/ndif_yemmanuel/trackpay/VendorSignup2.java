@@ -180,7 +180,7 @@ public class VendorSignup2 extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams(){
                     Map<String, String> params = new HashMap<>();
-                    params.put("email", vendornum);
+                    params.put("vendor_id", vendornum);
                     params.put("password", password);
                     return params;
                 }

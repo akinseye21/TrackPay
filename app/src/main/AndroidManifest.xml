@@ -4,17 +4,17 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ico"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ico"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
-            android:noHistory="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,6 @@
         </activity>
         <activity
             android:name=".SignUpLogin"
-            android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
             android:name=".VendorLogin"
@@ -48,9 +47,35 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".VendorDashboard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VendorProfile"
             android:noHistory="true"
             android:screenOrientation="portrait" />
-        <activity android:name=".VendorProfile"></activity>
+        <activity
+            android:name=".PlacesView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PlacesToVisit"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ExploreKaduna"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RestaurantView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RestaurantsToVisit"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HelpDesk"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ShoppingCentresToVisit"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".HotelsToVisit"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

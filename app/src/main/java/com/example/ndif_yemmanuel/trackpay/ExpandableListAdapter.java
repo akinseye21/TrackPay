@@ -68,7 +68,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+    public View getGroupView(int groupPosition, final boolean isExpanded, View convertView, ViewGroup parent) {
         GroupRow groupRow = (GroupRow) getGroup(groupPosition);
 
         if (convertView == null) {

@@ -1,6 +1,8 @@
 package com.example.ndif_yemmanuel.trackpay;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,13 +33,14 @@ public class VendorDashboard extends AppCompatActivity {
     ArrayList<String> Array_amount;
     ArrayList<String> Array_date;
     int total_rl;
+    LinearLayout home, explore_kd, helpdesk, profile;
+    SharedPreferences sharedpreferences1, sharedPreferences_rl, sharedPreferences_description, sharedPreferences_shortcut, sharedPreferences_payee, sharedPreferences_payment, sharedPreferences_amount, sharedPreferences_date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendor_dashboard);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
 
         totalRL = findViewById(R.id.totalRL);
         name = findViewById(R.id.name);
@@ -53,13 +57,133 @@ public class VendorDashboard extends AppCompatActivity {
         Array_paymentstatus = i.getExtras().getStringArrayList("paymentstatus");
         Array_amount = i.getExtras().getStringArrayList("amount");
         Array_date = i.getExtras().getStringArrayList("date");
-        String vendor_num = i.getStringExtra("vendor_number");
-        String vendor_name = i.getStringExtra("vendor_name");
-        String vendor_email = i.getStringExtra("vendor_email");
+        final String vendor_num = i.getStringExtra("vendor_number");
+        final String vendor_name = i.getStringExtra("vendor_name");
+        final String vendor_email = i.getStringExtra("vendor_email");
         String paid = i.getStringExtra("paid");
         String endorsed = i.getStringExtra("endorsed");
         String audited = i.getStringExtra("audited");
         total_rl = i.getIntExtra("total_rl", 0);
+
+        //using shared preference to store all fields
+        sharedpreferences1 = getSharedPreferences("My Preference", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences1.edit();
+        editor.putString("vendor_number", vendor_num);
+        editor.putString("vendor_name", vendor_name);
+        editor.putString("vendor_email", vendor_email);
+        editor.putString("paid", paid);
+        editor.putString("endorsed", endorsed);
+        editor.putString("audited", audited);
+        editor.putInt("total_rl", total_rl);
+        editor.commit();
+
+        //shared pref for rl_number
+        sharedPreferences_rl = getSharedPreferences("preference_rl", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor2 = sharedPreferences_rl.edit();
+        for(int j=0;j<Array_rl_num.size();j++)
+        {
+            editor2.putString("rl_" + j, Array_rl_num.get(j));
+        }
+        editor2.commit();
+
+        //shared pref for description
+        sharedPreferences_description = getSharedPreferences("preference_description", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor3 = sharedPreferences_description.edit();
+        for(int j=0;j<Array_rl_num.size();j++)
+        {
+            editor3.putString("description_" + j, Array_description.get(j));
+        }
+        editor3.commit();
+
+        //shared pref for shortcut
+        sharedPreferences_shortcut = getSharedPreferences("preference_shortcut", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor4 = sharedPreferences_shortcut.edit();
+        for(int j=0;j<Array_rl_num.size();j++)
+        {
+            editor4.putString("shortcut_" + j, Array_shortcut.get(j));
+        }
+        editor4.commit();
+
+        //shared pref for payee
+        sharedPreferences_payee = getSharedPreferences("preference_payee", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor5 = sharedPreferences_payee.edit();
+        for(int j=0;j<Array_rl_num.size();j++)
+        {
+            editor5.putString("payee_" + j, Array_payee.get(j));
+        }
+        editor5.commit();
+
+        //shared pref for payment
+        sharedPreferences_payment = getSharedPreferences("preference_payment", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor6 = sharedPreferences_payment.edit();
+        for(int j=0;j<Array_rl_num.size();j++)
+        {
+            editor6.putString("payment_" + j, Array_paymentstatus.get(j));
+        }
+        editor6.commit();
+
+        //shared pref for amount
+        sharedPreferences_amount = getSharedPreferences("preference_amount", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor7 = sharedPreferences_amount.edit();
+        for(int j=0;j<Array_rl_num.size();j++)
+        {
+            editor7.putString("amount_" + j, Array_amount.get(j));
+        }
+        editor7.commit();
+
+        //shared pref for date
+        sharedPreferences_date = getSharedPreferences("preference_date", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor8 = sharedPreferences_date.edit();
+        for(int j=0;j<Array_rl_num.size();j++)
+        {
+            editor8.putString("date_" + j, Array_date.get(j));
+        }
+        editor8.commit();
+
+
+
+
+
+
+        home = findViewById(R.id.home);
+        helpdesk = findViewById(R.id.help_desk);
+        profile = findViewById(R.id.profile);
+        explore_kd = findViewById(R.id.explore_kd);
+
+        //handling bottom menu
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        explore_kd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(VendorDashboard.this, ExploreKaduna.class);
+                i.putExtra("vendor_name", vendor_name);
+                i.putExtra("vendor_number", vendor_num);
+                startActivity(i);
+            }
+        });
+        helpdesk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(VendorDashboard.this, HelpDesk.class);
+                i.putExtra("vendor_name", vendor_name);
+                i.putExtra("vendor_number", vendor_num);
+                startActivity(i);
+            }
+        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(VendorDashboard.this, VendorProfile.class);
+                startActivity(i);
+            }
+        });
+
+
 
 
         parentList = new ArrayList<>();
@@ -85,7 +209,6 @@ public class VendorDashboard extends AppCompatActivity {
                 if(parent.isGroupExpanded(groupPosition))
                 {
                     parent.collapseGroup(groupPosition);
-
 
                 }
                 else{
