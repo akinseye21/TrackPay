@@ -6,123 +6,127 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#ffffff"
-    android:id="@+id/drawerlayout"
-    tools:context=".HotelsToVisit">
+    tools:context=".StaffDashboard">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/vendors_dashboard_bg"
+            android:background="@drawable/vendor_login_bg"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:text="Explore Kaduna"
+                android:text="Staff"
                 android:textColor="#ffffff"
-                android:textSize="35dp"
-                android:textStyle="normal" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:text="Name"
-                android:textColor="#ffffff"
-                android:textSize="15dp"
-                android:textStyle="italic|bold"
-                android:id="@+id/name"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="30dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="Unique ID: "
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:textStyle="italic"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:layout_marginBottom="30dp"
-                    android:text="......"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:textStyle="italic"
-                    android:id="@+id/uniqueid"/>
-
-            </LinearLayout>
-
+                android:textStyle="normal"
+                android:textSize="50dp"
+                android:layout_marginBottom="30dp"/>
 
         </LinearLayout>
 
-
         <ImageView
-            android:id="@+id/img"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:src="@drawable/main_staff"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="120dp"
-            android:src="@drawable/main_vendors" />
+            android:id="@+id/img"/>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_vertical"
-            android:gravity="center_vertical"
-            android:layout_below="@+id/img"
             android:layout_marginLeft="10dp"
-            android:id="@+id/places_to_visit">
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/hotel"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_centerVertical="true"
-                android:id="@+id/img2"/>
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/img"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hotels in Kaduna"
-                android:textSize="15dp"
-                android:textStyle="bold"
+                android:text="First Name"
+                android:textColor="#454060"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:textColor="#001062"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/img2"
-                android:id="@+id/places"/>
+                android:background="#b3ccff"
+                android:text="Daniel Ukpai"
+                android:textSize="16dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"
+                android:id="@+id/staffName"/>
 
 
-        </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Surname"
+                android:layout_marginTop="20dp"
+                android:textColor="#454060"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#001062"
+                android:background="#b3ccff"
+                android:text="Ukpaid"
+                android:textSize="16dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"
+                android:id="@+id/staffSurname"/>
 
 
 
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="55dp"
-            android:id="@+id/listview"
-            android:layout_below="@+id/places_to_visit" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone Number"
+                android:layout_marginTop="20dp"
+                android:textColor="#454060"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#001062"
+                android:background="#b3ccff"
+                android:text="08137439027"
+                android:textSize="16dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"
+                android:id="@+id/staffPhoneNum"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email address"
+                android:layout_marginTop="20dp"
+                android:textColor="#454060"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#001062"
+                android:background="#b3ccff"
+                android:text="ukpaid@gmail.com"
+                android:textSize="16dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textStyle="bold"
+                android:id="@+id/staffEmailAddress"/>
 
+        </LinearLayout>
 
 
         <LinearLayout
@@ -150,6 +154,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:background="#b3ccff"
                     android:gravity="center"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
@@ -171,9 +176,7 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:background="#f9a737"
-                    android:padding="4dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_marginLeft="15dp"
@@ -220,9 +223,10 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:gravity="center"
+                    android:padding="4dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:orientation="vertical"
@@ -267,28 +271,6 @@
 
         </LinearLayout>
 
-        <ProgressBar
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerInParent="true"
-            android:visibility="invisible"
-            android:id="@+id/progressBar"/>
-
     </RelativeLayout>
-
-    <android.support.design.widget.NavigationView
-        android:layout_width="200dp"
-        android:layout_height="match_parent"
-        android:background="#ffffff"
-        android:fitsSystemWindows="true"
-        android:dividerHeight="1dp"
-        app:itemTextColor="#040e65"
-        android:layout_gravity="start"
-        android:textDirection="ltr"
-        app:menu="@menu/navigation_menu"
-        android:id="@+id/navigationview">
-
-
-    </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>

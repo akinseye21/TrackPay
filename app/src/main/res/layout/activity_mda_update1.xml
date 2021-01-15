@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context=".MdaUpdate1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/vendor_login_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MDA's"
+                android:textColor="#ffffff"
+                android:textStyle="normal"
+                android:textSize="50dp"
+                android:layout_marginBottom="30dp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/main_mda"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="120dp"
+            android:id="@+id/img"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img"
+            android:orientation="vertical"
+            android:id="@+id/lin1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please provide your MDA code in\nthe space below"
+                android:textStyle="italic"
+                android:textColor="#000000"
+                android:textSize="12dp"
+                android:paddingLeft="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/password"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ededed"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#000000"
+                    android:textSize="12dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:id="@+id/edtEmail"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:id="@+id/progressBar"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_yellow"
+            android:layout_below="@+id/lin1"
+            android:id="@+id/btn"
+            android:text="CONTINUE"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:onClick="nxt" />
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/btn"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:text="Please kindly check your mail for your 'Vendor Unique ID'"-->
+<!--            android:textStyle="italic"-->
+<!--            android:textSize="12dp"-->
+<!--            android:textColor="#000000"-->
+<!--            android:id="@+id/txt1"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:paddingBottom="4dp"/>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_below="@id/txt1"-->
+<!--            android:layout_centerInParent="true">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="If not found, please kindly click "-->
+<!--                android:textStyle="italic"-->
+<!--                android:textSize="12dp"-->
+<!--                android:textColor="#000000"/>-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/resend"-->
+<!--                android:textStyle="italic"-->
+<!--                android:textSize="12dp"-->
+<!--                android:textColor="#e30615"/>-->
+<!--        </LinearLayout>-->
+
+
+    </RelativeLayout>
+
+</LinearLayout>

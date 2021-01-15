@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#ffffff"
     android:id="@+id/drawerlayout"
-    tools:context=".RestaurantView">
+    tools:context=".MdaDashboard">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,9 +16,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/vendors_dashboard_bg"
+            android:background="@drawable/vendor_login_bg"
+            android:id="@+id/linearVendor"
             android:gravity="center"
             android:orientation="vertical">
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -26,7 +28,8 @@
                 android:layout_marginBottom="1dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
-                android:text="Explore Kaduna"
+                android:layout_gravity="center"
+                android:text="MDA Dashboard"
                 android:textColor="#ffffff"
                 android:textSize="35dp"
                 android:textStyle="normal" />
@@ -35,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
+                android:layout_gravity="center"
                 android:text="Name"
                 android:textColor="#ffffff"
                 android:textSize="15dp"
@@ -44,6 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_gravity="center"
                 android:layout_marginBottom="30dp">
 
                 <TextView
@@ -52,7 +57,7 @@
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:text="Unique ID: "
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="15dp"
                     android:textStyle="italic"/>
                 <TextView
@@ -62,7 +67,7 @@
                     android:paddingRight="5dp"
                     android:layout_marginBottom="30dp"
                     android:text="......"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="15dp"
                     android:textStyle="italic"
                     android:id="@+id/uniqueid"/>
@@ -72,168 +77,214 @@
 
         </LinearLayout>
 
-
         <ImageView
             android:id="@+id/img"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="120dp"
-            android:src="@drawable/main_vendors" />
+            android:src="@drawable/main_mda" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/lin1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_below="@+id/img"
-            android:id="@+id/linear1"
-            android:layout_marginLeft="10dp">
+            android:gravity="center"
+            android:orientation="horizontal">
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:id="@+id/icon"
-                    android:src="@drawable/restaurant"/>
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/totalrl" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total RL"
+                        android:textColor="#040e67"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hotel Seventeen Restaurant"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="2dp"
+                    android:text="200"
+                    android:textColor="#01a350"
+                    android:textSize="14dp"
                     android:textStyle="bold"
-                    android:textSize="12dp"
-                    android:textColor="#001062"
-                    android:paddingLeft="5dp"
-                    android:id="@+id/restaurant_name"/>
+                    android:id="@+id/totalRL"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#58595b" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/resolved" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paid"
+                        android:textColor="#040e67"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="2dp"
+                    android:text="50%"
+                    android:textColor="#312682"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:id="@+id/paid"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#58595b" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/approved" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Endorsed"
+                        android:textColor="#040e67"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="2dp"
+                    android:text="20%"
+                    android:textColor="#e30713"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:id="@+id/endorsed"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#58595b" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/pending" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Audited"
+                        android:textColor="#040e67"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="2dp"
+                    android:text="8.3%"
+                    android:textColor="#f9b234"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:id="@+id/audited"/>
             </LinearLayout>
 
         </LinearLayout>
 
-        <ScrollView
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/lin1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#58595b" />
+
+        <ExpandableListView
+            android:id="@+id/listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/linear1"
-            android:layout_marginBottom="55dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/restaurant"
-                    android:layout_margin="10dp"
-                    android:id="@+id/restaurant_img"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="5dp"
-                    android:gravity="center_vertical"
-                    android:layout_gravity="center">
-
-
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center"
-                        android:layout_marginTop="5dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Address: "
-                            android:textStyle="normal"
-                            android:textSize="10dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Hotel Seventeen Restaurant"
-                            android:textSize="10dp"
-                            android:paddingLeft="5dp"
-                            android:id="@+id/restaurant_address"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center"
-                        android:layout_marginTop="5dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Open: "
-                            android:textStyle="normal"
-                            android:textSize="10dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="6AM"
-                            android:textSize="10dp"
-                            android:paddingLeft="5dp"
-                            android:id="@+id/open_hour"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center"
-                        android:layout_marginTop="5dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Closes: "
-                            android:textStyle="normal"
-                            android:textSize="10dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="10PM"
-                            android:textSize="10dp"
-                            android:paddingLeft="5dp"
-                            android:id="@+id/close_hour"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center"
-                        android:layout_marginTop="5dp">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Phone: "
-                            android:textStyle="normal"
-                            android:textSize="10dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="08137439027"
-                            android:textSize="10dp"
-                            android:paddingLeft="5dp"
-                            android:id="@+id/restaurant_contact"/>
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-
-
-        </ScrollView>
-
+            android:layout_below="@+id/view"
+            android:descendantFocusability="blocksDescendants"
+            android:clickable="true"
+            android:groupIndicator="@null"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:layout_marginBottom="70dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -242,6 +293,31 @@
             android:orientation="vertical"
             android:gravity="center_horizontal"
             android:background="#ffffff">
+
+            <!--                <RelativeLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:orientation="horizontal"-->
+            <!--                    android:layout_marginBottom="1dp">-->
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="View more details"-->
+            <!--                        android:textSize="10dp"-->
+            <!--                        android:layout_marginLeft="40dp"-->
+            <!--                        android:layout_centerVertical="true"/>-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:text="&gt;"-->
+            <!--                        android:textStyle="bold"-->
+            <!--                        android:textColor="#01a350"-->
+            <!--                        android:textSize="15dp"-->
+            <!--                        android:layout_alignParentEnd="true"-->
+            <!--                        android:layout_centerVertical="true"-->
+            <!--                        android:layout_marginRight="50dp"/>-->
+            <!--                </RelativeLayout>-->
 
             <View
                 android:layout_width="match_parent"
@@ -258,7 +334,9 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="#f9a737"
+                    android:padding="4dp"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_marginLeft="15dp"
@@ -281,9 +359,7 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:background="#f9a737"
-                    android:padding="4dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_marginLeft="15dp"
@@ -350,6 +426,7 @@
                         android:textColor="#040e65"/>
                 </LinearLayout>
 
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -378,6 +455,7 @@
         </LinearLayout>
 
     </RelativeLayout>
+
 
     <android.support.design.widget.NavigationView
         android:layout_width="200dp"

@@ -3,8 +3,14 @@ package com.example.ndif_yemmanuel.trackpay;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -37,9 +43,10 @@ public class ShoppingCentresToVisit extends AppCompatActivity {
     ListView listview;
     ProgressBar progressBar;
 
-    LinearLayout home, explore_kd, helpdesk, profile;
+    LinearLayout home, explore_kd, helpdesk, profile, more;
     SharedPreferences sharedpreferences1, sharedPreferences_rl, sharedPreferences_description, sharedPreferences_shortcut, sharedPreferences_payee, sharedPreferences_payment, sharedPreferences_amount, sharedPreferences_date;
-
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
     ArrayList<String> Array_rl_num = new ArrayList<>();
     ArrayList<String> Array_description = new ArrayList<>();
     ArrayList<String> Array_shortcut = new ArrayList<>();
@@ -54,9 +61,10 @@ public class ShoppingCentresToVisit extends AppCompatActivity {
         setContentView(R.layout.activity_shopping_centres_to_visit);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Intent i = getIntent();
+        final Intent i = getIntent();
         final String vendor_name = i.getStringExtra("vendor_name");
         final String vendor_number = i.getStringExtra("vendor_number");
+        final String code = i.getStringExtra("code");
 
         final ArrayList<String> Array_id = new ArrayList<>();
         final ArrayList<String> Array_name = new ArrayList<>();
@@ -73,6 +81,53 @@ public class ShoppingCentresToVisit extends AppCompatActivity {
 
         name.setText(vendor_name);
         num.setText(vendor_number);
+
+        mDrawerLayout = findViewById(R.id.drawerlayout);
+        mToggle = new ActionBarDrawerToggle(ShoppingCentresToVisit.this, mDrawerLayout, R.string.open, R.string.close);
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        NavigationView naviview = findViewById(R.id.navigationview);
+        if (naviview != null) {
+            setupDrawerContent(naviview);
+        }
+
+        naviview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()) {
+//                    case R.id.explore:
+//                        Intent i = new Intent(ShoppingCentresToVisit.this, ExploreKaduna.class);
+//                        i.putExtra("vendor_name", vendor_name);
+//                        i.putExtra("vendor_number", vendor_number);
+//                        i.putExtra("code", code);
+//                        startActivity(i);
+//                        break;
+//                    case R.id.help:
+//                        Intent j = new Intent(ShoppingCentresToVisit.this, HelpDesk.class);
+//                        j.putExtra("vendor_name", vendor_name);
+//                        j.putExtra("vendor_number", vendor_number);
+//                        j.putExtra("code", code);
+//                        startActivity(j);
+//                        break;
+//                    case R.id.profile:
+//                        if (code.equals("vendor")){
+//                            Intent k = new Intent(ShoppingCentresToVisit.this, VendorProfile.class);
+//                            startActivity(k);
+//                        }
+//                        else if(code.equals("mda")){
+//                            Intent l = new Intent(ShoppingCentresToVisit.this, MdaProfile.class);
+//                            startActivity(l);
+//                        }
+//                        break;
+                    default:
+                        mDrawerLayout.closeDrawers();
+                        break;
+                }
+
+                return true;
+            }
+        });
 
 
         progressBar.setVisibility(View.VISIBLE);
@@ -139,7 +194,8 @@ public class ShoppingCentresToVisit extends AppCompatActivity {
                                     intent.putExtra("restaurant closes", cl);
                                     intent.putExtra("restaurant image", ima);
                                     intent.putExtra("restaurant contact", cont);
-                                    intent.putExtra("code", "shopping");
+                                    intent.putExtra("codec", "shopping");
+                                    intent.putExtra("code", code);
                                     startActivity(intent);
 
                                 }
@@ -189,8 +245,8 @@ public class ShoppingCentresToVisit extends AppCompatActivity {
 
         //get fields from sharedpreference
         sharedpreferences1 = getSharedPreferences("My Preference", Context.MODE_PRIVATE);
-        String vendorNum = sharedpreferences1.getString("vendor_number", "");
-        String vendorName = sharedpreferences1.getString("vendor_name", "");
+        final String vendorNum = sharedpreferences1.getString("vendor_number", "");
+        final String vendorName = sharedpreferences1.getString("vendor_name", "");
         final String paid = sharedpreferences1.getString("paid", "");
         final String endorsed = sharedpreferences1.getString("endorsed", "");
         final String audited = sharedpreferences1.getString("audited", "");
@@ -251,27 +307,55 @@ public class ShoppingCentresToVisit extends AppCompatActivity {
 
 
 
+        more = findViewById(R.id.more);
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
 
         //handling bottom menu
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ShoppingCentresToVisit.this, VendorDashboard.class);
-                i.putExtra("vendor_name", vendor_name);
-                i.putExtra("vendor_number", vendor_number);
-                i.putExtra("vendor_email", vendorEmail);
-                i.putExtra("paid", paid);
-                i.putExtra("endorsed", endorsed);
-                i.putExtra("audited", audited);
-                i.putExtra("total_rl", total_rl);
-                i.putStringArrayListExtra("rl_num", Array_rl_num);
-                i.putStringArrayListExtra("description", Array_description);
-                i.putStringArrayListExtra("shortcut", Array_shortcut);
-                i.putStringArrayListExtra("payee", Array_payee);
-                i.putStringArrayListExtra("paymentstatus", Array_paymentstatus);
-                i.putStringArrayListExtra("amount", Array_amount);
-                i.putStringArrayListExtra("date", Array_date);
-                startActivity(i);
+                if (code.equals("vendor")){
+                    Intent i = new Intent(ShoppingCentresToVisit.this, VendorDashboard.class);
+                    i.putExtra("vendor_name", vendor_name);
+                    i.putExtra("vendor_number", vendor_number);
+                    i.putExtra("vendor_email", vendorEmail);
+                    i.putExtra("paid", paid);
+                    i.putExtra("endorsed", endorsed);
+                    i.putExtra("audited", audited);
+                    i.putExtra("total_rl", total_rl);
+                    i.putStringArrayListExtra("rl_num", Array_rl_num);
+                    i.putStringArrayListExtra("description", Array_description);
+                    i.putStringArrayListExtra("shortcut", Array_shortcut);
+                    i.putStringArrayListExtra("payee", Array_payee);
+                    i.putStringArrayListExtra("paymentstatus", Array_paymentstatus);
+                    i.putStringArrayListExtra("amount", Array_amount);
+                    i.putStringArrayListExtra("date", Array_date);
+                    startActivity(i);
+                }
+                else if(code.equals("mda")){
+                    Intent i = new Intent(ShoppingCentresToVisit.this, MdaDashboard.class);
+                    i.putExtra("mda_name", vendorName);
+                    i.putExtra("mda_code", vendorNum);
+                    i.putExtra("mda_email", vendorEmail);
+                    i.putExtra("paid", paid);
+                    i.putExtra("endorsed", endorsed);
+                    i.putExtra("audited", audited);
+                    i.putExtra("total_rl", total_rl);
+                    i.putStringArrayListExtra("rl_num", Array_rl_num);
+                    i.putStringArrayListExtra("description", Array_description);
+                    i.putStringArrayListExtra("shortcut", Array_shortcut);
+                    i.putStringArrayListExtra("payee", Array_payee);
+                    i.putStringArrayListExtra("paymentstatus", Array_paymentstatus);
+                    i.putStringArrayListExtra("amount", Array_amount);
+                    i.putStringArrayListExtra("date", Array_date);
+                    startActivity(i);
+                }
+
             }
         });
         explore_kd.setOnClickListener(new View.OnClickListener() {
@@ -280,6 +364,7 @@ public class ShoppingCentresToVisit extends AppCompatActivity {
                 Intent i = new Intent(ShoppingCentresToVisit.this, ExploreKaduna.class);
                 i.putExtra("vendor_name", vendor_name);
                 i.putExtra("vendor_number", vendor_number);
+                i.putExtra("code", code);
                 startActivity(i);
             }
         });
@@ -289,15 +374,35 @@ public class ShoppingCentresToVisit extends AppCompatActivity {
                 Intent i = new Intent(ShoppingCentresToVisit.this, HelpDesk.class);
                 i.putExtra("vendor_name", vendor_name);
                 i.putExtra("vendor_number", vendor_number);
+                i.putExtra("code", code);
                 startActivity(i);
             }
         });
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ShoppingCentresToVisit.this, VendorProfile.class);
-                startActivity(i);
+                if (code.equals("vendor")){
+                    Intent i = new Intent(ShoppingCentresToVisit.this, VendorProfile.class);
+                    startActivity(i);
+                }
+                else if(code.equals("mda")){
+                    Intent i = new Intent(ShoppingCentresToVisit.this, MdaProfile.class);
+                    startActivity(i);
+                }
+
             }
         });
+    }
+
+    private void setupDrawerContent(NavigationView navigationView) {
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        menuItem.setChecked(true);
+                        mDrawerLayout.closeDrawers();
+                        return true;
+                    }
+                });
     }
 }

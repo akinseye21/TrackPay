@@ -4,9 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.KeyListener;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -39,9 +45,10 @@ public class VendorProfile extends AppCompatActivity {
     SharedPreferences sharedpreferences;
     ProgressBar progressBar;
 
-    LinearLayout home, explore_kd, helpdesk, profile;
+    LinearLayout home, explore_kd, helpdesk, profile, more;
     SharedPreferences sharedpreferences1, sharedPreferences_rl, sharedPreferences_description, sharedPreferences_shortcut, sharedPreferences_payee, sharedPreferences_payment, sharedPreferences_amount, sharedPreferences_date, SPEditProfile, SP_Get_Profile;
-
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
     public static final String UPDATE_PROFILE = "http://arrearskdsg.com.ng/mobile/vupdate2";
 
     ArrayList<String> Array_rl_num = new ArrayList<>();
@@ -72,6 +79,14 @@ public class VendorProfile extends AppCompatActivity {
         explore_kd = findViewById(R.id.explore_kd);
         progressBar = findViewById(R.id.progressBar);
 
+        mDrawerLayout = findViewById(R.id.drawerlayout);
+        mToggle = new ActionBarDrawerToggle(VendorProfile.this, mDrawerLayout, R.string.open, R.string.close);
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        NavigationView naviview = findViewById(R.id.navigationview);
+        if (naviview != null) {
+            setupDrawerContent(naviview);
+        }
 
         //get fields from sharedpreference
         sharedpreferences1 = getSharedPreferences("My Preference", Context.MODE_PRIVATE);
@@ -82,6 +97,39 @@ public class VendorProfile extends AppCompatActivity {
         final String audited = sharedpreferences1.getString("audited", "");
         final String vendorEmail = sharedpreferences1.getString("vendor_email", "");
         final int total_rl = sharedpreferences1.getInt("total_rl", 0);
+
+        naviview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()) {
+//                    case R.id.explore:
+//                        Intent i = new Intent(VendorProfile.this, ExploreKaduna.class);
+//                        i.putExtra("vendor_name", vendorName);
+//                        i.putExtra("vendor_number", vendorNum);
+//                        startActivity(i);
+//                        break;
+//                    case R.id.help:
+//                        Intent j = new Intent(VendorProfile.this, HelpDesk.class);
+//                        j.putExtra("vendor_name", vendorName);
+//                        j.putExtra("vendor_number", vendorNum);
+//                        startActivity(j);
+//                        break;
+//                    case R.id.profile:
+////                        Intent j = new Intent(VendorProfile.this, VendorProfile.class);
+////                        startActivity(j);
+//                        break;
+                    default:
+                        mDrawerLayout.closeDrawers();
+                        break;
+                }
+
+                return true;
+            }
+        });
+
+
+
 
         //get fields from sharedpreference_rl
         sharedPreferences_rl = getSharedPreferences("preference_rl", Context.MODE_PRIVATE);
@@ -277,6 +325,13 @@ public class VendorProfile extends AppCompatActivity {
 
 
 
+        more = findViewById(R.id.more);
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
 
         //handling bottom menu
         home.setOnClickListener(new View.OnClickListener() {
@@ -306,6 +361,7 @@ public class VendorProfile extends AppCompatActivity {
                 Intent i = new Intent(VendorProfile.this, ExploreKaduna.class);
                 i.putExtra("vendor_name", vendorName);
                 i.putExtra("vendor_number", vendorNum);
+                i.putExtra("code", "vendor");
                 startActivity(i);
             }
         });
@@ -315,6 +371,7 @@ public class VendorProfile extends AppCompatActivity {
                 Intent i = new Intent(VendorProfile.this, HelpDesk.class);
                 i.putExtra("vendor_name", vendorName);
                 i.putExtra("vendor_number", vendorNum);
+                i.putExtra("code", "vendor");
                 startActivity(i);
             }
         });
@@ -325,5 +382,17 @@ public class VendorProfile extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setupDrawerContent(NavigationView navigationView) {
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        menuItem.setChecked(true);
+                        mDrawerLayout.closeDrawers();
+                        return true;
+                    }
+                });
     }
 }

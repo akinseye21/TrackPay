@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#ffffff"
     android:id="@+id/drawerlayout"
-    tools:context=".HelpDesk">
+    tools:context=".MdaProfile">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/vendors_dashboard_bg"
+            android:background="@drawable/vendor_login_bg"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -26,7 +26,7 @@
                 android:layout_marginBottom="1dp"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
-                android:text="Help Desk"
+                android:text="MDA Profile"
                 android:textColor="#ffffff"
                 android:textSize="35dp"
                 android:textStyle="normal" />
@@ -52,7 +52,7 @@
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:text="Unique ID: "
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="15dp"
                     android:textStyle="italic"/>
                 <TextView
@@ -62,7 +62,7 @@
                     android:paddingRight="5dp"
                     android:layout_marginBottom="30dp"
                     android:text="......"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="15dp"
                     android:textStyle="italic"
                     android:id="@+id/uniqueid"/>
@@ -72,305 +72,269 @@
 
         </LinearLayout>
 
-
         <ImageView
             android:id="@+id/img"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="120dp"
-            android:src="@drawable/main_vendors" />
+            android:src="@drawable/main_mda" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@+id/img"
+            android:id="@+id/btnedit"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_blue2"
+            android:text="Edit Profile"
+            android:textColor="#ffffff"
+            android:textAllCaps="true"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_alignParentRight="true"/>
 
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@+id/img"
+            android:id="@+id/btnsave"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_blue2"
+            android:text="Save"
+            android:visibility="invisible"
+            android:textColor="#ffffff"
+            android:textAllCaps="true"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"/>
 
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/img"
-            android:layout_marginLeft="10dp">
+            android:layout_below="@+id/btnedit"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="55dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/key"
+                    android:layout_marginLeft="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Support"
-                    android:textSize="10dp"
-                    android:textStyle="bold"
-                    android:textColor="#001062"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/img2"/>
+                    android:text="MDA Code"
+                    android:textColor="#454060"/>
+            </LinearLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="10dp">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/contact"
-                            android:layout_marginRight="10dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Tech Support Staff"
-                            android:textStyle="bold"
-                            android:textColor="#001062"/>
-                    </LinearLayout>
+                    android:orientation="horizontal">
 
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#001062"
+                        android:paddingBottom="20dp"
+                        android:inputType="number"
+                        android:textStyle="bold"
+                        android:focusable="false"
+                        android:clickable="false"
+                        android:id="@+id/mdacode"/>
                     <Button
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:background="@drawable/rounded_blue2"
-                        android:text="-"
+                        android:text="+"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         android:textColor="#ffffff"
                         android:focusable="false"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginRight="10dp"
                         android:layout_alignParentEnd="true"/>
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="40dp"
-                    android:id="@+id/layer1"
-                    android:gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/contact"
-                        android:layout_marginRight="10dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Maryam Mayers:"
-                        android:paddingRight="10dp"
-                        android:textStyle="bold"
-                        android:textColor="#001062"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="07037881589"
-                        android:id="@+id/call1"
-                        android:textStyle="bold"
-                        android:textColor="#001062"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="40dp"
-                    android:id="@+id/layer2"
-                    android:gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/contact"
-                        android:layout_marginRight="10dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Auwal Suleiman:"
-                        android:paddingRight="10dp"
-                        android:textStyle="bold"
-                        android:textColor="#001062"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="08178114130"
-                        android:textStyle="bold"
-                        android:id="@+id/call2"
-                        android:textColor="#001062"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="40dp"
-                    android:id="@+id/layer3"
-                    android:gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/contact"
-                        android:layout_marginRight="10dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Katuka Samuel:"
-                        android:paddingRight="10dp"
-                        android:textStyle="bold"
-                        android:textColor="#001062"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="08032771576"
-                        android:textStyle="bold"
-                        android:id="@+id/call3"
-                        android:textColor="#001062"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="40dp"
-                    android:id="@+id/layer4"
-                    android:gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/contact"
-                        android:layout_marginRight="10dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="McThomas Sylvanus:"
-                        android:paddingRight="10dp"
-                        android:textStyle="bold"
-                        android:textColor="#001062"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="08062928839"
-                        android:textStyle="bold"
-                        android:id="@+id/call4"
-                        android:textColor="#001062"/>
-                </LinearLayout>
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="10dp">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:id="@+id/faq"
-                        android:gravity="center">
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:src="@drawable/question"
-                            android:layout_marginRight="10dp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="FAQ"
-                            android:textStyle="bold"
-                            android:textColor="#001062"/>
-                    </LinearLayout>
-
-                    <Button
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:background="@drawable/rounded_blue2"
-                        android:text="-"
-                        android:textStyle="bold"
-                        android:layout_centerVertical="true"
-                        android:textColor="#ffffff"
-                        android:focusable="false"
-                        android:layout_marginRight="20dp"
-                        android:layout_alignParentEnd="true"/>
-
 
                 </RelativeLayout>
 
+
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_below="@+id/faq"
-                    android:id="@+id/layer5"
-                    android:gravity="center_vertical">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/contact"
-                        android:layout_marginRight="10dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="09072105628"
-                        android:id="@+id/call5"
-                        android:textStyle="bold"
-                        android:textColor="#001062"/>
-                </LinearLayout>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
-                    android:text="Call us"
-                    android:textSize="10dp"
-                    android:textStyle="bold"
-                    android:textColor="#001062"/>
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/mail_icon"
+                        android:layout_marginLeft="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="#454060"/>
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#001062"
+                        android:paddingBottom="20dp"
+                        android:inputType="textEmailAddress"
+                        android:textStyle="bold"
+                        android:focusable="false"
+                        android:clickable="false"
+                        android:id="@+id/mdaemail"/>
+                    <Button
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/rounded_blue2"
+                        android:text="+"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:textColor="#ffffff"
+                        android:focusable="false"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="55dp"
-                    android:id="@+id/layer6"
-                    android:gravity="center_vertical">
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/contact"
-                        android:layout_marginRight="10dp"/>
-
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/password"
+                        android:layout_marginLeft="10dp"/>
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Password"
+                        android:textColor="#454060"/>
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="09072105628"
-                        android:id="@+id/call6"
+                        android:textColor="#001062"
+                        android:paddingBottom="20dp"
+                        android:inputType="textPassword"
                         android:textStyle="bold"
-                        android:textColor="#001062"/>
+                        android:focusable="false"
+                        android:clickable="false"
+                        android:id="@+id/mdapassword"/>
+                    <Button
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/rounded_blue2"
+                        android:text="+"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:textColor="#ffffff"
+                        android:focusable="false"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/password"
+                        android:layout_marginLeft="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Confirm Password"
+                        android:textColor="#454060"/>
                 </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#001062"
+                        android:paddingBottom="20dp"
+                        android:inputType="textPassword"
+                        android:textStyle="bold"
+                        android:focusable="false"
+                        android:clickable="false"
+                        android:id="@+id/mdaconfirmpassword"/>
+                    <Button
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/rounded_blue2"
+                        android:text="+"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:textColor="#ffffff"
+                        android:focusable="false"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+
 
 
 
             </LinearLayout>
 
         </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <LinearLayout
@@ -443,9 +407,7 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:background="#f9a737"
-                    android:padding="4dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_marginLeft="15dp"
@@ -468,9 +430,11 @@
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="#f9a737"
                     android:layout_gravity="center"
                     android:gravity="center"
+                    android:padding="4dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:orientation="vertical"

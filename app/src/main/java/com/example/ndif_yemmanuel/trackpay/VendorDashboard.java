@@ -3,13 +3,20 @@ package com.example.ndif_yemmanuel.trackpay;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,8 +40,10 @@ public class VendorDashboard extends AppCompatActivity {
     ArrayList<String> Array_amount;
     ArrayList<String> Array_date;
     int total_rl;
-    LinearLayout home, explore_kd, helpdesk, profile;
+    LinearLayout home, explore_kd, helpdesk, profile, more;
     SharedPreferences sharedpreferences1, sharedPreferences_rl, sharedPreferences_description, sharedPreferences_shortcut, sharedPreferences_payee, sharedPreferences_payment, sharedPreferences_amount, sharedPreferences_date;
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +57,16 @@ public class VendorDashboard extends AppCompatActivity {
         txtpaid = findViewById(R.id.paid);
         txtendorsed = findViewById(R.id.endorsed);
         txtaudited = findViewById(R.id.audited);
+
+
+        mDrawerLayout = findViewById(R.id.drawerlayout);
+        mToggle = new ActionBarDrawerToggle(VendorDashboard.this, mDrawerLayout, R.string.open, R.string.close);
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        NavigationView naviview = findViewById(R.id.navigationview);
+        if (naviview != null) {
+            setupDrawerContent(naviview);
+        }
 
         Intent i = getIntent();
         Array_rl_num = i.getExtras().getStringArrayList("rl_num");
@@ -64,6 +83,43 @@ public class VendorDashboard extends AppCompatActivity {
         String endorsed = i.getStringExtra("endorsed");
         String audited = i.getStringExtra("audited");
         total_rl = i.getIntExtra("total_rl", 0);
+
+        naviview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()) {
+//                    case R.id.explore:
+//                        Intent d = new Intent(VendorDashboard.this, ExploreKaduna.class);
+//                        d.putExtra("vendor_name", vendor_name);
+//                        d.putExtra("vendor_number", vendor_num);
+//                        d.putExtra("code", "vendor");
+//                        startActivity(d);
+//                        break;
+//                    case R.id.help:
+//                        Intent i = new Intent(VendorDashboard.this, HelpDesk.class);
+//                        i.putExtra("vendor_name", vendor_name);
+//                        i.putExtra("vendor_number", vendor_num);
+//                        i.putExtra("code", "vendor");
+//                        startActivity(i);
+//                        break;
+//                    case R.id.profile:
+//                        Intent j = new Intent(VendorDashboard.this, VendorProfile.class);
+//                        j.putExtra("code", "vendor");
+//                        startActivity(j);
+//                        break;
+                    default:
+                        mDrawerLayout.closeDrawers();
+                        break;
+                }
+
+                return true;
+            }
+        });
+
+
+
+
 
         //using shared preference to store all fields
         sharedpreferences1 = getSharedPreferences("My Preference", Context.MODE_PRIVATE);
@@ -149,6 +205,13 @@ public class VendorDashboard extends AppCompatActivity {
         helpdesk = findViewById(R.id.help_desk);
         profile = findViewById(R.id.profile);
         explore_kd = findViewById(R.id.explore_kd);
+        more = findViewById(R.id.more);
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
 
         //handling bottom menu
         home.setOnClickListener(new View.OnClickListener() {
@@ -163,6 +226,7 @@ public class VendorDashboard extends AppCompatActivity {
                 Intent i = new Intent(VendorDashboard.this, ExploreKaduna.class);
                 i.putExtra("vendor_name", vendor_name);
                 i.putExtra("vendor_number", vendor_num);
+                i.putExtra("code", "vendor");
                 startActivity(i);
             }
         });
@@ -172,6 +236,7 @@ public class VendorDashboard extends AppCompatActivity {
                 Intent i = new Intent(VendorDashboard.this, HelpDesk.class);
                 i.putExtra("vendor_name", vendor_name);
                 i.putExtra("vendor_number", vendor_num);
+                i.putExtra("code", "vendor");
                 startActivity(i);
             }
         });
@@ -179,9 +244,11 @@ public class VendorDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(VendorDashboard.this, VendorProfile.class);
+                i.putExtra("code", "vendor");
                 startActivity(i);
             }
         });
+
 
 
 
@@ -263,5 +330,22 @@ public class VendorDashboard extends AppCompatActivity {
         expandableListView = findViewById(R.id.listview);
         listAdapter = new ExpandableListAdapter(VendorDashboard.this, parentList);
         expandableListView.setAdapter(listAdapter);
+    }
+
+    private void setupDrawerContent(NavigationView navigationView) {
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        menuItem.setChecked(true);
+                        mDrawerLayout.closeDrawers();
+                        return true;
+                    }
+                });
+    }
+
+    @Override
+    public void onBackPressed(){
+        //do nothing
     }
 }

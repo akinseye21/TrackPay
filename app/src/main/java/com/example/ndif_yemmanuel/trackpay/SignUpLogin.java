@@ -37,4 +37,9 @@ public class SignUpLogin extends AppCompatActivity {
         Intent mv4 = new Intent(SignUpLogin.this, VendorSignup1.class);
         startActivity(mv4);
     }
+
+    public void mdaUpdate(View view) {
+        Intent mv5 = new Intent(SignUpLogin.this, MdaUpdate1.class);
+        startActivity(mv5);
+    }
 }

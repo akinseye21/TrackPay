@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#ffffff"
+    android:id="@+id/drawerlayout"
     tools:context="com.example.ndif_yemmanuel.trackpay.VendorDashboard">
 
         <RelativeLayout
@@ -16,8 +17,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@drawable/vendors_dashboard_bg"
+                android:id="@+id/linearVendor"
                 android:gravity="center"
                 android:orientation="vertical">
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -25,6 +28,7 @@
                     android:layout_marginBottom="1dp"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
+                    android:layout_gravity="center"
                     android:text="Vendors Dashboard"
                     android:textColor="#ffffff"
                     android:textSize="35dp"
@@ -34,6 +38,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
+                    android:layout_gravity="center"
                     android:text="Name"
                     android:textColor="#ffffff"
                     android:textSize="15dp"
@@ -43,6 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:layout_gravity="center"
                     android:layout_marginBottom="30dp">
 
                     <TextView
@@ -288,30 +294,30 @@
                 android:gravity="center_horizontal"
                 android:background="#ffffff">
 
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal"-->
-<!--                    android:layout_marginBottom="1dp">-->
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="View more details"-->
-<!--                        android:textSize="10dp"-->
-<!--                        android:layout_marginLeft="40dp"-->
-<!--                        android:layout_centerVertical="true"/>-->
+                <!--                <RelativeLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:orientation="horizontal"-->
+                <!--                    android:layout_marginBottom="1dp">-->
+                <!--                    <TextView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:text="View more details"-->
+                <!--                        android:textSize="10dp"-->
+                <!--                        android:layout_marginLeft="40dp"-->
+                <!--                        android:layout_centerVertical="true"/>-->
 
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="&gt;"-->
-<!--                        android:textStyle="bold"-->
-<!--                        android:textColor="#01a350"-->
-<!--                        android:textSize="15dp"-->
-<!--                        android:layout_alignParentEnd="true"-->
-<!--                        android:layout_centerVertical="true"-->
-<!--                        android:layout_marginRight="50dp"/>-->
-<!--                </RelativeLayout>-->
+                <!--                    <TextView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:text="&gt;"-->
+                <!--                        android:textStyle="bold"-->
+                <!--                        android:textColor="#01a350"-->
+                <!--                        android:textSize="15dp"-->
+                <!--                        android:layout_alignParentEnd="true"-->
+                <!--                        android:layout_centerVertical="true"-->
+                <!--                        android:layout_marginRight="50dp"/>-->
+                <!--                </RelativeLayout>-->
 
                 <View
                     android:layout_width="match_parent"
@@ -451,4 +457,20 @@
         </RelativeLayout>
 
 
-</LinearLayout>
+    <android.support.design.widget.NavigationView
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:fitsSystemWindows="true"
+        android:dividerHeight="1dp"
+        app:itemTextColor="#040e65"
+        android:layout_gravity="start"
+        android:textDirection="ltr"
+        app:menu="@menu/navigation_menu"
+        android:id="@+id/navigationview">
+
+
+    </android.support.design.widget.NavigationView>
+
+
+</android.support.v4.widget.DrawerLayout>
