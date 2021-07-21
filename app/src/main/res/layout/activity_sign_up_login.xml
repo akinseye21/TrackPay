@@ -6,186 +6,343 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.ndif_yemmanuel.trackpay.SignUpLogin">
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="#040e67"
-        android:gravity="center"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:src="@drawable/img1"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/img1"
-            android:textStyle="bold"
-            android:textColor="#ffffff"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Please select a user as appropriate"
-            android:textColor="#ffffff"
-            android:textStyle="italic"
-            android:paddingTop="10dp"
-            android:textSize="11dp"/>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
-        android:orientation="vertical"
-        android:paddingTop="30dp">
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:id="@+id/barlayout"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#040e67"
+                app:theme="@style/ToolbarTheme"
+                android:id="@+id/toolbar">
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-            <LinearLayout
+            android:layout_height="200dp"
+            android:background="#040e67"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/img1"/>
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/vendor"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Vendors"
-                    android:textStyle="bold"
-                    android:textColor="#000000"/>
-            </LinearLayout>
-
-
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="25dp"
-                android:background="@drawable/rounded_black"
-                android:text="LOGIN"
+                android:text="@string/img1"
                 android:textStyle="bold"
-                android:textSize="12dp"
-                android:textColor="#ffffff"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="50dp"
-                android:onClick="vendorlogin"/>
-
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="25dp"
-                android:background="@drawable/rounded_yellow"
-                android:text="SIGNUP"
-                android:textStyle="bold"
-                android:textSize="12dp"
-                android:textColor="#ffffff"
-                android:onClick="vendorsignup1"/>
-        </LinearLayout>
-
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="50dp"
-            android:gravity="center">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/staff"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Staff"
-                    android:textStyle="bold"
-                    android:textColor="#000000"/>
-            </LinearLayout>
-
-
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="25dp"
-                android:background="@drawable/rounded_black"
-                android:text="LOGIN"
-                android:textStyle="bold"
-                android:textSize="12dp"
-                android:textColor="#ffffff"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="50dp"
-                android:onClick="stafflogin"/>
-
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="25dp"
-                android:background="@drawable/rounded_green"
-                android:visibility="invisible"
-                android:text="UPDATE"
-                android:textStyle="bold"
-                android:textSize="12dp"
                 android:textColor="#ffffff"/>
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="50dp"
-            android:gravity="center">
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:text="@string/note"
+                android:textColor="#ffffff"
+                android:textStyle="italic"
+                android:paddingTop="10dp"
+                android:textSize="11dp"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:paddingTop="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/relVendor"
                 android:gravity="center">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/mda"/>
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="MDAs"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:srcCompat="@drawable/vendor"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vendors"
+                        android:textStyle="bold"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/rounded_black"
+                    android:text="@string/login"
                     android:textStyle="bold"
-                    android:textColor="#000000"/>
+                    android:textSize="12dp"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="50dp"
+                    android:onClick="vendorlogin"/>
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/rounded_yellow"
+                    android:text="@string/signup2"
+                    android:textStyle="bold"
+                    android:textSize="12dp"
+                    android:textColor="#ffffff"
+                    android:onClick="vendorsignup1"/>
             </LinearLayout>
 
 
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="25dp"
-                android:background="@drawable/rounded_black"
-                android:text="LOGIN"
-                android:textStyle="bold"
-                android:textSize="12dp"
-                android:textColor="#ffffff"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="50dp"
-                android:onClick="mdalogin"/>
 
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="25dp"
-                android:background="@drawable/rounded_green"
-                android:text="UPDATE"
-                android:textStyle="bold"
-                android:textSize="12dp"
-                android:textColor="#ffffff"
-                android:visibility="invisible"
-                android:onClick="mdaUpdate"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="50dp"
+                android:id="@+id/relStaff"
+                android:layout_below="@+id/relVendor"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:srcCompat="@drawable/staff"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Staff"
+                        android:textStyle="bold"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/rounded_black"
+                    android:text="@string/login"
+                    android:textStyle="bold"
+                    android:textSize="12dp"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="50dp"
+                    android:onClick="stafflogin"/>
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/rounded_green"
+                    android:visibility="invisible"
+                    android:text="UPDATE"
+                    android:textStyle="bold"
+                    android:textSize="12dp"
+                    android:textColor="#ffffff"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="50dp"
+                android:id="@+id/relMDA"
+                android:layout_below="@+id/relStaff"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        app:srcCompat="@drawable/mda"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MDAs"
+                        android:textStyle="bold"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/rounded_black"
+                    android:text="@string/login"
+                    android:textStyle="bold"
+                    android:textSize="12dp"
+                    android:textColor="#ffffff"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="50dp"
+                    android:onClick="mdalogin"/>
+
+                <Button
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/rounded_green"
+                    android:text="UPDATE"
+                    android:textStyle="bold"
+                    android:textSize="12dp"
+                    android:textColor="#ffffff"
+                    android:visibility="invisible"
+                    android:onClick="mdaUpdate"/>
+            </LinearLayout>
+
+
+
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000"
+            android:layout_above="@+id/idk"
+            android:layout_marginTop="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/idk"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical"
+                android:id="@+id/explore_kd">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat="@drawable/explore"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/explore_kaduna"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#040e65"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical"
+                android:id="@+id/investment">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat="@drawable/invest"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Investment"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#040e65"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical"
+                android:id="@+id/help_desk">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat="@drawable/help"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/help_desk"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#040e65"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical"
+                android:id="@+id/chat">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat="@drawable/phone_chat_blue"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chat Support"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#040e65"/>
+            </LinearLayout>
+
+
+
         </LinearLayout>
+
+
+        </RelativeLayout>
 
     </LinearLayout>
+
+
 
 </LinearLayout>

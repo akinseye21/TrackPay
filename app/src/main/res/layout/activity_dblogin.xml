@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/bg"
+    tools:context=".DBLogin">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:id="@+id/email"
+        android:layout_marginTop="10dp"
+        android:hint="Email"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:id="@+id/password"
+        android:layout_marginTop="10dp"
+        android:hint="Password"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="17dp"
+        android:background="@drawable/rounded_white"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btn_login"/>
+
+</LinearLayout>

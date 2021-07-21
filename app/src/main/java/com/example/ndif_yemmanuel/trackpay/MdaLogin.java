@@ -1,7 +1,9 @@
 package com.example.ndif_yemmanuel.trackpay;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -32,7 +34,7 @@ public class MdaLogin extends AppCompatActivity {
     String gotten_Status, gotten_Name, gotten_DimensionCode, gotten_MdaCode, gotten_Email, gotten_paid, gotten_endorsed, gotten_audited, gotten_Queried;
     int project_len;
 
-    public static final String MDA_LOGIN = "http://arrearskdsg.com.ng/mobile/mdalogin2";
+    public static final String MDA_LOGIN = "https://arrearskdsg.com.ng/mobile/mdalogin2";
 
     ArrayList<String> Array_rl_num = new ArrayList<>();
     ArrayList<String> Array_description = new ArrayList<>();
@@ -47,6 +49,17 @@ public class MdaLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mda_login);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         t_email = findViewById(R.id.email);
         t_password = findViewById(R.id.password);

@@ -1,16 +1,18 @@
 package com.example.ndif_yemmanuel.trackpay;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.KeyListener;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,7 +31,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -49,7 +50,7 @@ public class VendorProfile extends AppCompatActivity {
     SharedPreferences sharedpreferences1, sharedPreferences_rl, sharedPreferences_description, sharedPreferences_shortcut, sharedPreferences_payee, sharedPreferences_payment, sharedPreferences_amount, sharedPreferences_date, SPEditProfile, SP_Get_Profile;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-    public static final String UPDATE_PROFILE = "http://arrearskdsg.com.ng/mobile/vupdate2";
+    public static final String UPDATE_PROFILE = "https://arrearskdsg.com.ng/mobile/vupdate2";
 
     ArrayList<String> Array_rl_num = new ArrayList<>();
     ArrayList<String> Array_description = new ArrayList<>();
@@ -64,6 +65,17 @@ public class VendorProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendor_profile);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 //
 //        //get fields from sharedpreference
 //        sharedpreferences = getSharedPreferences("My Preference", Context.MODE_PRIVATE);
@@ -84,6 +96,7 @@ public class VendorProfile extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         NavigationView naviview = findViewById(R.id.navigationview);
+        toolbar.setNavigationIcon(R.drawable.back_arrow);
         if (naviview != null) {
             setupDrawerContent(naviview);
         }
@@ -103,22 +116,41 @@ public class VendorProfile extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()) {
-//                    case R.id.explore:
-//                        Intent i = new Intent(VendorProfile.this, ExploreKaduna.class);
-//                        i.putExtra("vendor_name", vendorName);
-//                        i.putExtra("vendor_number", vendorNum);
-//                        startActivity(i);
-//                        break;
-//                    case R.id.help:
-//                        Intent j = new Intent(VendorProfile.this, HelpDesk.class);
-//                        j.putExtra("vendor_name", vendorName);
-//                        j.putExtra("vendor_number", vendorNum);
+                    case R.id.signout:
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(VendorProfile.this);
+                        builder.setTitle("Exit");
+                        builder.setMessage("Do you want to exit Trackpay?");
+
+                        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent i = new Intent(VendorProfile.this,  MainActivity.class);
+                                startActivity(i);
+                                dialog.dismiss();
+                            }
+                        });
+
+                        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Do nothing
+                                dialog.dismiss();
+                                mDrawerLayout.closeDrawers();
+                            }
+                        });
+
+                        AlertDialog alert = builder.create();
+                        alert.show();
+                        break;
+                    case R.id.chat:
+                        Intent i = new Intent(VendorProfile.this,  LiveChat.class);
+                        startActivity(i);
+                        break;
+
+                    case R.id.openticket:
+//                        Intent j = new Intent(ExploreKaduna.this,  LiveChat.class);
 //                        startActivity(j);
-//                        break;
-//                    case R.id.profile:
-////                        Intent j = new Intent(VendorProfile.this, VendorProfile.class);
-////                        startActivity(j);
-//                        break;
+                        break;
                     default:
                         mDrawerLayout.closeDrawers();
                         break;

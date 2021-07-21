@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -25,11 +26,11 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/money"/>
+                app:srcCompat="@drawable/money"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Release Amount: "
+                android:text="@string/released_amount"
                 android:textColor="#040e67"
                 android:textStyle="bold"/>
             <TextView
@@ -53,11 +54,11 @@
                 android:layout_height="20dp"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="2dp"
-                android:src="@drawable/calendar"/>
+                app:srcCompat="@drawable/calendar"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Release Date: "
+                android:text="@string/released_date"
                 android:textColor="#040e67"
                 android:textStyle="bold"/>
             <TextView
@@ -79,11 +80,11 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/money"/>
+                app:srcCompat="@drawable/money"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Release Type: "
+                android:text="@string/released_type"
                 android:textColor="#040e67"
                 android:textStyle="bold"/>
             <TextView
@@ -105,11 +106,11 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/money"/>
+                app:srcCompat="@drawable/money"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Payment Status: "
+                android:text="@string/payment_status"
                 android:textColor="#040e67"
                 android:textStyle="bold"/>
             <TextView

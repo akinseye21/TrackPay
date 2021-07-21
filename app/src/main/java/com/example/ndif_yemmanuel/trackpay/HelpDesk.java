@@ -2,22 +2,28 @@ package com.example.ndif_yemmanuel.trackpay;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +31,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class HelpDesk extends AppCompatActivity {
-    TextView name, num;
+    TextView name, num, ui;
     LinearLayout home, explore_kd, helpdesk, profile, more;
     LinearLayout layer1, layer2, layer3, layer4, layer5, layer6;
     SharedPreferences sharedpreferences1, sharedPreferences_rl, sharedPreferences_description, sharedPreferences_shortcut, sharedPreferences_payee, sharedPreferences_payment, sharedPreferences_amount, sharedPreferences_date;
@@ -40,11 +46,25 @@ public class HelpDesk extends AppCompatActivity {
     ArrayList<String> Array_amount = new ArrayList<>();
     ArrayList<String> Array_date = new ArrayList<>();
 
+    LinearLayout headLayer;
+    ImageView img;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_desk);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         Intent i = getIntent();
         final String vendor_name = i.getStringExtra("vendor_name");
@@ -53,19 +73,50 @@ public class HelpDesk extends AppCompatActivity {
 
         name = findViewById(R.id.name);
         num = findViewById(R.id.uniqueid);
+        ui = findViewById(R.id.ui);
 
         call1 = findViewById(R.id.call1);
         call2 = findViewById(R.id.call2);
         call3 = findViewById(R.id.call3);
         call4 = findViewById(R.id.call4);
-        call5 = findViewById(R.id.call5);
+//        call5 = findViewById(R.id.call5);
         call6 = findViewById(R.id.call6);
         layer1 = findViewById(R.id.layer1);
         layer2 = findViewById(R.id.layer2);
         layer3 = findViewById(R.id.layer3);
         layer4 = findViewById(R.id.layer4);
-        layer5 = findViewById(R.id.layer5);
+//        layer5 = findViewById(R.id.layer5);
         layer6 = findViewById(R.id.layer6);
+
+        headLayer = findViewById(R.id.headlayer);
+        img = findViewById(R.id.img);
+
+        home = findViewById(R.id.home);
+        helpdesk = findViewById(R.id.help_desk);
+        profile = findViewById(R.id.profile);
+        explore_kd = findViewById(R.id.explore_kd);
+        more = findViewById(R.id.more);
+
+        if (code.equals("mda")){
+            headLayer.setBackgroundResource(R.drawable.vendor_login_bg);
+            img.setImageResource(R.drawable.main_mda);
+            helpdesk.setBackgroundColor(Color.parseColor("#b3ccff"));
+            toolbar.setBackgroundColor(Color.parseColor("#040e67"));
+            num.setTextColor(Color.parseColor("#ffffff"));
+            ui.setTextColor(Color.parseColor("#ffffff"));
+        }
+        if (code.equals("staff")){
+            headLayer.setBackgroundResource(R.drawable.vendor_login_bg);
+            img.setImageResource(R.drawable.main_mda);
+            helpdesk.setBackgroundColor(Color.parseColor("#b3ccff"));
+            toolbar.setBackgroundColor(Color.parseColor("#040e67"));
+            num.setTextColor(Color.parseColor("#ffffff"));
+            ui.setTextColor(Color.parseColor("#ffffff"));
+        }
+        if (code.equals("no user")){
+            home.setVisibility(View.GONE);
+            more.setVisibility(View.GONE);
+        }
 
 
         mDrawerLayout = findViewById(R.id.drawerlayout);
@@ -73,6 +124,7 @@ public class HelpDesk extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         NavigationView naviview = findViewById(R.id.navigationview);
+        toolbar.setNavigationIcon(R.drawable.back_arrow);
         if (naviview != null) {
             setupDrawerContent(naviview);
         }
@@ -82,29 +134,41 @@ public class HelpDesk extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()) {
-//                    case R.id.explore:
-//                        Intent i = new Intent(HelpDesk.this, ExploreKaduna.class);
-//                        i.putExtra("vendor_name", vendor_name);
-//                        i.putExtra("vendor_number", vendor_number);
-//                        i.putExtra("code", code);
-//                        break;
-//                    case R.id.help:
-////                        Intent w = new Intent(HelpDesk.this, HelpDesk.class);
-////                        startActivity(w);
-//                        break;
-//                    case R.id.profile:
-//                        if(code.equals("vendor")){
-//                            Intent j = new Intent(HelpDesk.this, VendorProfile.class);
-//                            startActivity(j);
-//                        }
-//                        else if(code.equals("mda")){
-//                            Intent k = new Intent(HelpDesk.this, MdaProfile.class);
-//                            startActivity(k);
-//                        }
-//                        else{
-//                            //do nothing
-//                        }
-//                        break;
+                    case R.id.signout:
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(HelpDesk.this);
+                        builder.setTitle("Exit");
+                        builder.setMessage("Do you want to exit Trackpay?");
+
+                        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent i = new Intent(HelpDesk.this,  MainActivity.class);
+                                startActivity(i);
+                                dialog.dismiss();
+                            }
+                        });
+
+                        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Do nothing
+                                dialog.dismiss();
+                                mDrawerLayout.closeDrawers();
+                            }
+                        });
+
+                        AlertDialog alert = builder.create();
+                        alert.show();
+                        break;
+                    case R.id.chat:
+                        Intent i = new Intent(HelpDesk.this,  LiveChat.class);
+                        startActivity(i);
+                        break;
+
+                    case R.id.openticket:
+//                        Intent j = new Intent(ExploreKaduna.this,  LiveChat.class);
+//                        startActivity(j);
+                        break;
                     default:
                         mDrawerLayout.closeDrawers();
                         break;
@@ -164,18 +228,18 @@ public class HelpDesk extends AppCompatActivity {
                 }
             }
         });
-        layer5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                askForPermission(Manifest.permission.CALL_PHONE,1);
-
-                Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse("tel:"+call5.getText().toString().trim()));
-                if(ActivityCompat.checkSelfPermission(HelpDesk.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
-                    startActivity(callIntent);
-                }
-            }
-        });
+//        layer5.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                askForPermission(Manifest.permission.CALL_PHONE,1);
+//
+//                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+//                callIntent.setData(Uri.parse("tel:"+call5.getText().toString().trim()));
+//                if(ActivityCompat.checkSelfPermission(HelpDesk.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
+//                    startActivity(callIntent);
+//                }
+//            }
+//        });
         layer6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -192,30 +256,6 @@ public class HelpDesk extends AppCompatActivity {
         name.setText(vendor_name);
         num.setText(vendor_number);
 
-        home = findViewById(R.id.home);
-        helpdesk = findViewById(R.id.help_desk);
-        profile = findViewById(R.id.profile);
-        explore_kd = findViewById(R.id.explore_kd);
-
-//        callNum.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Intent callIntent = new Intent(Intent.ACTION_DIAL);
-//                callIntent.setData(Uri.parse("tel:"+callNum.getText().toString().trim()));
-//
-//                if (ActivityCompat.checkSelfPermission(HelpDesk.this,
-//                        Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-//                    ActivityCompat.requestPermissions(HelpDesk.this, new String[]{Manifest.permission.CALL_PHONE}, 1);
-//                    startActivity(callIntent);
-//                }
-//
-//                if(ActivityCompat.checkSelfPermission(HelpDesk.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
-//
-//                }
-//
-//            }
-//        });
 
 
         //get fields from sharedpreference
@@ -282,7 +322,7 @@ public class HelpDesk extends AppCompatActivity {
 
 
 
-        more = findViewById(R.id.more);
+
         more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -332,6 +372,9 @@ public class HelpDesk extends AppCompatActivity {
                     i.putStringArrayListExtra("date", Array_date);
                     startActivity(i);
                 }
+                else if(code.equals("no user")){
+                    Toast.makeText(HelpDesk.this, "Register or Login to access", Toast.LENGTH_LONG).show();
+                }
 
             }
         });
@@ -377,7 +420,7 @@ public class HelpDesk extends AppCompatActivity {
             if (ActivityCompat.shouldShowRequestPermissionRationale(HelpDesk.this, permission)) {
 
                 //This is called if user has denied the permission before
-                //In this case I am just asking the permission again
+                //In this cased I am just asking the permission again
                 ActivityCompat.requestPermissions(HelpDesk.this, new String[]{permission}, requestCode);
 
             } else {

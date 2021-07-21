@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "366089644299",
+    "firebase_url": "https://kd-tracker-default-rtdb.firebaseio.com",
+    "project_id": "kd-tracker",
+    "storage_bucket": "kd-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366089644299:android:ac21c6c5f3662422bb5a0e",
+        "android_client_info": {
+          "package_name": "com.example.ndif_yemmanuel.trackpay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366089644299-k6ehejii1c9bv6j1885o8f0up175p6se.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF09xQvyNPRGntHY3_HIub3pQXXaNTTLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366089644299-k6ehejii1c9bv6j1885o8f0up175p6se.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

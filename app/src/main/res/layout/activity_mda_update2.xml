@@ -16,10 +16,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:id="@+id/barlayout"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:theme="@style/ToolbarTheme"
+                    android:background="#040e67"
+                    android:id="@+id/toolbar">
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@drawable/vendor_login_bg"
+                android:layout_below="@+id/barlayout"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -37,9 +54,9 @@
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/main_mda"
+                app:srcCompat="@drawable/main_mda"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="180dp"
                 android:id="@+id/img"/>
 
             <LinearLayout
@@ -66,7 +83,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/key"
+                        app:srcCompat="@drawable/key"
                         android:layout_marginLeft="20dp"/>
                     <EditText
                         android:layout_width="match_parent"
@@ -106,7 +123,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/mail_icon"
+                        app:srcCompat="@drawable/mail_icon"
                         android:layout_marginLeft="20dp"/>
                     <EditText
                         android:layout_width="match_parent"
@@ -147,7 +164,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/password"
+                        app:srcCompat="@drawable/password"
                         android:layout_marginLeft="20dp"/>
                     <EditText
                         android:layout_width="match_parent"
@@ -188,7 +205,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/password"
+                        app:srcCompat="@drawable/password"
                         android:layout_marginLeft="20dp"/>
                     <EditText
                         android:layout_width="match_parent"

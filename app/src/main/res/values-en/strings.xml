@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KD Tracker</string>
+
+    <string name="img1"><u>USER LOGIN/SIGNUP</u></string>
+    <string name="signup"><u>Signup Here</u></string>
+    <string name="resend"><u>RESEND</u></string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+
+    <string name="select_language">Select Language</string>
+    <string name="need_help">Need help?</string>
+    <string name="get_started">GET STARTED</string>
+
+    <string name="note">Please select a user as appropriate</string>
+    <string name="login">LOGIN</string>
+    <string name="signup2">SIGNUP</string>
+
+    <string name="enter_email">Please enter your email address</string>
+    <string name="enter_password">Please enter your password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="dont_have">Don\'t have an account?</string>
+
+    <string name="provide_email">Please provide your email address in\nthe space below</string>
+    <string name="conti">CONTINUE</string>
+    <string name="check">Please kindly check your mail for your \'Vendor Unique ID\'</string>
+    <string name="click">If not found, please kindly click </string>
+
+    <string name="vendor_id">Please enter Vendor Unique ID</string>
+    <string name="repeat_password">Repeat password</string>
+
+    <string name="name">Name</string>
+    <string name="unique_id">Unique ID:</string>
+    <string name="total_rl">Total RL</string>
+    <string name="paid">Paid</string>
+    <string name="endorsed">Endorsed</string>
+    <string name="audited">Audited</string>
+    <string name="home">Home</string>
+    <string name="explore_kaduna">Explore Kaduna</string>
+    <string name="help_desk">Help Desk</string>
+    <string name="profile">Profile</string>
+    <string name="more">More</string>
+
+    <string name="released_amount">Release Amount: </string>
+    <string name="released_date">Release Date: </string>
+    <string name="released_type">Release Type: </string>
+    <string name="payment_status">Payment Status: </string>
+
+    <string name="places_to_visit">Places to visit in Kaduna</string>
+    <string name="restaurants">Restaurants in Kaduna</string>
+    <string name="hotels">Hotels in Kaduna</string>
+    <string name="car_rental">Car Rentals</string>
+    <string name="shopping_centers">Shopping Centers</string>
+</resources>

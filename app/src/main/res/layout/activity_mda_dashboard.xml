@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
-                    android:text="Unique ID: "
+                    android:text="@string/unique_id"
                     android:textColor="#ffffff"
                     android:textSize="15dp"
                     android:textStyle="italic"/>
@@ -83,7 +83,7 @@
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="120dp"
-            android:src="@drawable/main_mda" />
+            app:srcCompat="@drawable/main_mda" />
 
         <LinearLayout
             android:id="@+id/lin1"
@@ -107,12 +107,12 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/totalrl" />
+                        app:srcCompat="@drawable/totalrl" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Total RL"
+                        android:text="@string/total_rl"
                         android:textColor="#040e67"
                         android:textSize="10dp"
                         android:textStyle="bold" />
@@ -151,12 +151,12 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/resolved" />
+                        app:srcCompat="@drawable/resolved" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Paid"
+                        android:text="@string/paid"
                         android:textColor="#040e67"
                         android:textSize="10dp"
                         android:textStyle="bold" />
@@ -195,12 +195,12 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/approved" />
+                        app:srcCompat="@drawable/approved" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Endorsed"
+                        android:text="@string/endorsed"
                         android:textColor="#040e67"
                         android:textSize="10dp"
                         android:textStyle="bold" />
@@ -239,12 +239,12 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/pending" />
+                        app:srcCompat="@drawable/pending" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Audited"
+                        android:text="@string/audited"
                         android:textColor="#040e67"
                         android:textSize="10dp"
                         android:textStyle="bold" />
@@ -335,7 +335,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:background="#f9a737"
+                    android:background="#b3ccff"
                     android:padding="4dp"
                     android:layout_gravity="center"
                     android:gravity="center"
@@ -346,11 +346,13 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/home1"/>
+                        app:srcCompat="@drawable/home1"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Home"
+                        android:text="@string/home"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
                         android:textSize="10dp"
                         android:textStyle="bold"
                         android:textColor="#040e65"/>
@@ -369,11 +371,13 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/explore"/>
+                        app:srcCompat="@drawable/explore"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Explore Kaduna"
+                        android:text="@string/explore_kaduna"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
                         android:textSize="10dp"
                         android:textStyle="bold"
                         android:textColor="#040e65"/>
@@ -393,11 +397,13 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/help"/>
+                        app:srcCompat="@drawable/help"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Help Desk"
+                        android:text="@string/help_desk"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
                         android:textSize="10dp"
                         android:textStyle="bold"
                         android:textColor="#040e65"/>
@@ -416,11 +422,13 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/profile"/>
+                        app:srcCompat="@drawable/profile"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Profile"
+                        android:text="@string/profile"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
                         android:textSize="10dp"
                         android:textStyle="bold"
                         android:textColor="#040e65"/>
@@ -439,11 +447,13 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/ic_menu"/>
+                        app:srcCompat="@drawable/ic_menu"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="More"
+                        android:text="@string/more"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
                         android:textSize="10dp"
                         android:textStyle="bold"
                         android:textColor="#040e65"/>
@@ -457,7 +467,7 @@
     </RelativeLayout>
 
 
-    <android.support.design.widget.NavigationView
+    <com.google.android.material.navigation.NavigationView
         android:layout_width="200dp"
         android:layout_height="match_parent"
         android:background="#ffffff"
@@ -470,6 +480,6 @@
         android:id="@+id/navigationview">
 
 
-    </android.support.design.widget.NavigationView>
+    </com.google.android.material.navigation.NavigationView>
 
-</android.support.v4.widget.DrawerLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

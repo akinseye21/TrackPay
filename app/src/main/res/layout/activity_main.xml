@@ -11,76 +11,297 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/logo"
-        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/logo"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="44dp"
-        android:layout_gravity="center_horizontal"
-        android:text="KDSG"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:textSize="40dp"/>
-
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="PAYMENT TRACKER"
-        android:textStyle="bold"
-        android:textColor="#ffffff"
-        android:textSize="11dp"/>
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="KD"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="TRACKER"
+            android:textStyle="normal"
+            android:textColor="#ffffff"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:gravity="bottom"
-        android:layout_gravity="end"
-        android:layout_marginBottom="40dp">
+        android:layout_marginBottom="0dp">
+
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:id="@+id/relLogin"
+            android:onClick="move">
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_horizontal"
+                android:background="@drawable/home_white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Signup / Login"
+                    android:textStyle="bold"
+                    android:textColor="#040e67"
+                    android:textSize="18dp"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:srcCompat="@drawable/circle_blue"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/user_plus"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/relLogin"
+            android:layout_marginTop="50dp"
+            android:id="@+id/relExplore">
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_horizontal"
+                android:background="@drawable/home_orange">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Explore Kaduna"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="18dp"
+                    android:paddingLeft="10dp"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:srcCompat="@drawable/circle_white"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/kd_map"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/relExplore"
+            android:layout_marginTop="50dp"
+            android:id="@+id/relChat">
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_horizontal"
+                android:background="@drawable/home_white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chat with us"
+                    android:textStyle="bold"
+                    android:textColor="#019b52"
+                    android:textSize="18dp"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:srcCompat="@drawable/circle_green"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/phone_chat_white"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:visibility="invisible"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/relChat"
+            android:layout_marginTop="50dp"
+            android:id="@+id/adminCPanel">
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_horizontal"
+                android:background="@drawable/home_blue">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Admin C-Panel"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:textSize="18dp"
+                    android:paddingLeft="10dp"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:srcCompat="@drawable/circle_white"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/phone_chat_blue"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+
+
+
+        <!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/select_language"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="11dp"-->
+<!--            android:id="@+id/select"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginTop="200dp"/>-->
+
+
+<!--        <Spinner-->
+<!--            android:id="@+id/simpleSpinner"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="30dp"-->
+<!--            android:layout_marginRight="30dp"-->
+<!--            android:layout_below="@+id/select"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:background="@drawable/background"-->
+<!--            android:layout_marginTop="10dp" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/need_help"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textSize="9dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:id="@+id/needHelp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginBottom="70dp"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_marginLeft="20dp"/>-->
 
         <TextView
+            android:id="@+id/lang_opt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Need help?"
-            android:textColor="#ffffff"
-            android:textSize="9dp"
-            android:textStyle="bold"
-            android:id="@+id/needHelp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"/>
-
-        <TextView
-            android:id="@+id/getStarted"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/needHelp"
-            android:layout_toLeftOf="@+id/textView"
-            android:layout_toStartOf="@+id/textView"
-            android:text="GET STARTED"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:paddingRight="20dp"
+            android:text=" Choose your preferred language"
             android:textColor="#000000"
-            android:textSize="15dp"
-            android:textStyle="bold"
+            android:textSize="8dp"
+            android:textStyle="italic|bold"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/ic_settings"
+            android:layout_marginBottom="50dp"
             android:layout_centerVertical="true"
             android:onClick="move"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/needHelp"
+            android:layout_alignParentBottom="true"
             android:text=" &gt;"
             android:textColor="#fa9f1d"
             android:textSize="15dp"
             android:textStyle="bold"
-            android:id="@+id/textView"
+            android:layout_marginBottom="52dp"
+            android:id="@+id/lang_opt2"
             android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="10dp"
             android:onClick="move"/>
+
+
+
     </RelativeLayout>
 
 </LinearLayout>

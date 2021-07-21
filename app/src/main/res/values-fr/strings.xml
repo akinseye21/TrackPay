@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KD Tracker</string>
+
+    <string name="img1"><u>CONNEXION UTILISATEUR/INSCRIPTION</u></string>
+    <string name="signup"><u>Inscrivez-vous ici</u></string>
+    <string name="resend"><u>RENVOYER</u></string>
+    <string name="open">ouverte</string>
+    <string name="close">fermer</string>
+
+    <string name="select_language">Choisir la langue</string>
+    <string name="need_help">Besoin d\'aide?</string>
+    <string name="get_started">COMMENCER</string>
+
+    <string name="note">Veuillez sélectionner un utilisateur approprié</string>
+    <string name="login">CONNEXION</string>
+    <string name="signup2">S\'INSCRIRE</string>
+
+    <string name="enter_email">Veuillez saisir votre adresse e-mail</string>
+    <string name="enter_password">s\'il vous plait entrez votre mot de passe</string>
+    <string name="forgot_password">Mot de passe oublié?</string>
+    <string name="dont_have">Vous n\'avez pas de compte ?</string>
+
+    <string name="provide_email">Veuillez indiquer votre adresse e-mail dans l\'espace ci-dessous</string>
+    <string name="conti">CONTINUEZ</string>
+    <string name="check">Veuillez vérifier votre courrier pour votre « identifiant unique du fournisseur »</string>
+    <string name="click">S\'il n\'est pas trouvé, veuillez cliquer sur </string>
+
+    <string name="vendor_id">Veuillez saisir l\'identifiant unique du fournisseur</string>
+    <string name="repeat_password">Répéter le mot de passe</string>
+
+    <string name="name">Nom</string>
+    <string name="unique_id">Identifiant unique:</string>
+    <string name="total_rl">RL total</string>
+    <string name="paid">Payé</string>
+    <string name="endorsed">Approuvé</string>
+    <string name="audited">Vérifié</string>
+    <string name="home">Domicile</string>
+    <string name="explore_kaduna">Explorez Kaduna</string>
+    <string name="help_desk">bureau d\'aide</string>
+    <string name="profile">Profil</string>
+    <string name="more">Suite</string>
+
+    <string name="released_amount">Montant de la libération: </string>
+    <string name="released_date">Date de sortie: </string>
+    <string name="released_type">Type de version: </string>
+    <string name="payment_status">Statut de paiement: </string>
+
+    <string name="places_to_visit">Lieux à visiter à Kaduna</string>
+    <string name="restaurants">Restaurants à Kaduna</string>
+    <string name="hotels">Hôtels à Kaduna</string>
+    <string name="car_rental">Location de voitures</string>
+    <string name="shopping_centers">Centres commerciaux</string>
+</resources>

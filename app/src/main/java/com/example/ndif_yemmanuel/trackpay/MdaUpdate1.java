@@ -1,7 +1,9 @@
 package com.example.ndif_yemmanuel.trackpay;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -28,13 +30,24 @@ public class MdaUpdate1 extends AppCompatActivity {
     String status, name_, dimension_code, mda_code, email;
     ProgressBar progressBar;
 
-    public static final String MDA_UPDATE = "http://arrearskdsg.com.ng/mobile/mdalogin";
+    public static final String MDA_UPDATE = "https://arrearskdsg.com.ng/mobile/mdalogin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mda_update1);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         mdacode = findViewById(R.id.edtEmail);
         progressBar = findViewById(R.id.progressBar);

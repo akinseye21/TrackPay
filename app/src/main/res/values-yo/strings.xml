@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KD Tracker</string>
+
+    <string name="img1"><u>OLUMULO AWO / SIGNUP</u></string>
+    <string name="signup"><u>Iforukosile Nibi</u></string>
+    <string name="resend"><u>FIFUN</u></string>
+    <string name="open">ṣii</string>
+    <string name="close">sunmọ</string>
+
+    <string name="select_language">Yan Ede</string>
+    <string name="need_help">Nilo iranlowo?</string>
+    <string name="get_started">Bẹrẹ</string>
+
+    <string name="note">Jọwọ yan olumulo kan bi o ṣe yẹ</string>
+    <string name="login">WO ILE</string>
+    <string name="signup2">FORUKỌSILẸ</string>
+
+    <string name="enter_email">Jọwọ tẹ adirẹsi imeeli rẹ</string>
+    <string name="enter_password">Jọwọ tẹ ọrọ igbaniwọle rẹ sii</string>
+    <string name="forgot_password">Gbagbe ọrọ aṣina bi?</string>
+    <string name="dont_have">Ṣe o ko ni akọọlẹ kan?</string>
+
+    <string name="provide_email">Jọwọ pese adirẹsi imeeli rẹ ni aaye ti o wa ni isalẹ</string>
+    <string name="conti">TẸLẸ</string>
+    <string name="check">Jọwọ jọwọ ṣayẹwo meeli rẹ fun ID Alailẹgbẹ Alailẹgbẹ rẹ</string>
+    <string name="click">Ti a ko ba rii, jọwọ tẹ tẹ </string>
+
+    <string name="vendor_id">Jọwọ tẹ ID Alailẹgbẹ ataja</string>
+    <string name="repeat_password">Tun oro igbaniwolle se</string>
+
+    <string name="name">Orukọ</string>
+    <string name="unique_id">ID alailẹgbẹ:</string>
+    <string name="total_rl">Lapapọ RL</string>
+    <string name="paid">Ti sanwo</string>
+    <string name="endorsed">Fọwọsi</string>
+    <string name="audited">Ti ṣayẹwo</string>
+    <string name="home">Ile</string>
+    <string name="explore_kaduna">Ṣawari\nKaduna</string>
+    <string name="help_desk">Iduro\nIranlọwọ</string>
+    <string name="profile">Profaili</string>
+    <string name="more">Diẹ sii</string>
+
+    <string name="released_amount">Tu Iye: </string>
+    <string name="released_date">Ojo ifisile: </string>
+    <string name="released_type">Tu Iru: </string>
+    <string name="payment_status">Ipo isanwo: </string>
+
+    <string name="places_to_visit">Awọn aaye lati ṣabẹwo si Kaduna</string>
+    <string name="restaurants">Awọn ounjẹ ni Kaduna</string>
+    <string name="hotels">Awọn ile itura ni Kaduna</string>
+    <string name="car_rental">Awọn yiyalo ọkọ ayọkẹlẹ</string>
+    <string name="shopping_centers">Awọn ile-iṣẹ rira</string>
+</resources>

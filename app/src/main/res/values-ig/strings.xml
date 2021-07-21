@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KD Tracker</string>
+
+    <string name="img1"><u>OZI OGO / SIGNUP</u></string>
+    <string name="signup"><u>Banye ebe a</u></string>
+    <string name="resend"><u>Zaghachi</u></string>
+    <string name="open">imeghe</string>
+    <string name="close">mechie</string>
+
+    <string name="select_language">Họrọ Asụsụ</string>
+    <string name="need_help">Achọrọ enyemaka?</string>
+    <string name="get_started">Bido</string>
+
+    <string name="note">Biko họrọ onye ọrụ dika okwesiri</string>
+    <string name="login">BANYE</string>
+    <string name="signup2">DEBANYE AHA</string>
+
+    <string name="enter_email">Biko tinye adreesị email gị</string>
+    <string name="enter_password">Biko tinye okwuntughe gi</string>
+    <string name="forgot_password">Chefuru okwuntughe?</string>
+    <string name="dont_have">Enweghị akaụntụ?</string>
+
+    <string name="provide_email">Biko nye adreesị email gị na oghere dị n\'okpuru</string>
+    <string name="conti">Nọgide</string>
+    <string name="check">Biko jiri nlezianya lelee ozi gị maka NJ ID gị</string>
+    <string name="click">Ọ bụrụ na ahụghị ya, biko jiri obiọma pịa </string>
+
+    <string name="vendor_id">Biko tinye Nku Unique ID</string>
+    <string name="repeat_password">Tinyegharịa okwuntughe</string>
+
+    <string name="name">Aha</string>
+    <string name="unique_id">NJ pụrụ iche:</string>
+    <string name="total_rl">Ọnụ RL</string>
+    <string name="paid">Gwọ</string>
+    <string name="endorsed">Kwadoro</string>
+    <string name="audited">Nyochaa</string>
+    <string name="home">Ulo</string>
+    <string name="explore_kaduna">Choputa\nKaduna</string>
+    <string name="help_desk">Enyemaka\noche</string>
+    <string name="profile">Profaịlụ</string>
+    <string name="more">Ọzọ</string>
+
+    <string name="released_amount">Hapụ Ọnụ: </string>
+    <string name="released_date">Ụbọchị mwepụta: </string>
+    <string name="released_type">Hapụ dị: </string>
+    <string name="payment_status">Kwụ Statusgwọ Status: </string>
+
+    <string name="places_to_visit">Ebe ị ga-aga ileta na Kaduna</string>
+    <string name="restaurants">Lọ oriri na ọụụ na Kaduna</string>
+    <string name="hotels">Họtelu ndi di na Kaduna</string>
+    <string name="car_rental">Car mgbazinye</string>
+    <string name="shopping_centers">Lọ ahịa</string>
+</resources>

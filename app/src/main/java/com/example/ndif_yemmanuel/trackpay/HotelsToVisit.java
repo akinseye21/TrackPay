@@ -1,19 +1,26 @@
 package com.example.ndif_yemmanuel.trackpay;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -37,8 +44,8 @@ import java.util.Map;
 
 public class HotelsToVisit extends AppCompatActivity {
 
-    public static final String HOTELS_TO_VISIT = "http://arrearskdsg.com.ng/mobile/hotels";
-    TextView name, num;
+    public static final String HOTELS_TO_VISIT = "https://arrearskdsg.com.ng/mobile/hotels";
+    TextView name, num, ui;
     int ArrayLength;
     ListView listview;
     ProgressBar progressBar;
@@ -55,11 +62,25 @@ public class HotelsToVisit extends AppCompatActivity {
     ArrayList<String> Array_amount = new ArrayList<>();
     ArrayList<String> Array_date = new ArrayList<>();
 
+    LinearLayout headLayer;
+    ImageView img;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotels_to_visit);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         final Intent i = getIntent();
         final String vendor_name = i.getStringExtra("vendor_name");
@@ -78,6 +99,38 @@ public class HotelsToVisit extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         name = findViewById(R.id.name);
         num = findViewById(R.id.uniqueid);
+        ui = findViewById(R.id.ui);
+
+        home = findViewById(R.id.home);
+        helpdesk = findViewById(R.id.help_desk);
+        profile = findViewById(R.id.profile);
+        explore_kd = findViewById(R.id.explore_kd);
+        more = findViewById(R.id.more);
+
+        headLayer = findViewById(R.id.headlayer);
+        img = findViewById(R.id.img);
+
+        if (code.equals("mda")){
+            headLayer.setBackgroundResource(R.drawable.vendor_login_bg);
+            img.setImageResource(R.drawable.main_mda);
+            explore_kd.setBackgroundColor(Color.parseColor("#b3ccff"));
+            toolbar.setBackgroundColor(Color.parseColor("#040e67"));
+            num.setTextColor(Color.parseColor("#ffffff"));
+            ui.setTextColor(Color.parseColor("#ffffff"));
+        }
+        if (code.equals("staff")){
+            headLayer.setBackgroundResource(R.drawable.vendor_login_bg);
+            img.setImageResource(R.drawable.main_mda);
+            explore_kd.setBackgroundColor(Color.parseColor("#b3ccff"));
+            toolbar.setBackgroundColor(Color.parseColor("#040e67"));
+            num.setTextColor(Color.parseColor("#ffffff"));
+            ui.setTextColor(Color.parseColor("#ffffff"));
+            profile.setVisibility(View.GONE);
+        }
+        if (code.equals("no user")){
+            home.setVisibility(View.GONE);
+            more.setVisibility(View.GONE);
+        }
 
         name.setText(vendor_name);
         num.setText(vendor_number);
@@ -87,6 +140,7 @@ public class HotelsToVisit extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         NavigationView naviview = findViewById(R.id.navigationview);
+        toolbar.setNavigationIcon(R.drawable.back_arrow);
         if (naviview != null) {
             setupDrawerContent(naviview);
         }
@@ -96,18 +150,41 @@ public class HotelsToVisit extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()) {
-//                    case R.id.explore:
-//                        Intent d = new Intent(HotelsToVisit.this, ExploreKaduna.class);
-//                        startActivity(d);
-//                        break;
-//                    case R.id.help:
-//                        Intent w = new Intent(HotelsToVisit.this, HelpDesk.class);
-//                        startActivity(w);
-//                        break;
-//                    case R.id.profile:
-//                        Intent j = new Intent(HotelsToVisit.this, VendorProfile.class);
+                    case R.id.signout:
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(HotelsToVisit.this);
+                        builder.setTitle("Exit");
+                        builder.setMessage("Do you want to exit Trackpay?");
+
+                        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent i = new Intent(HotelsToVisit.this,  MainActivity.class);
+                                startActivity(i);
+                                dialog.dismiss();
+                            }
+                        });
+
+                        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // Do nothing
+                                dialog.dismiss();
+                                mDrawerLayout.closeDrawers();
+                            }
+                        });
+
+                        AlertDialog alert = builder.create();
+                        alert.show();
+                        break;
+                    case R.id.chat:
+                        Intent i = new Intent(HotelsToVisit.this,  LiveChat.class);
+                        startActivity(i);
+                        break;
+
+                    case R.id.openticket:
+//                        Intent j = new Intent(ExploreKaduna.this,  LiveChat.class);
 //                        startActivity(j);
-//                        break;
+                        break;
                     default:
                         mDrawerLayout.closeDrawers();
                         break;
@@ -223,14 +300,6 @@ public class HotelsToVisit extends AppCompatActivity {
 
 
 
-
-
-        home = findViewById(R.id.home);
-        helpdesk = findViewById(R.id.help_desk);
-        profile = findViewById(R.id.profile);
-        explore_kd = findViewById(R.id.explore_kd);
-
-
         //get fields from sharedpreference
         sharedpreferences1 = getSharedPreferences("My Preference", Context.MODE_PRIVATE);
         final String vendorNum = sharedpreferences1.getString("vendor_number", "");
@@ -294,7 +363,7 @@ public class HotelsToVisit extends AppCompatActivity {
         }
 
 
-        more = findViewById(R.id.more);
+
         more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -342,6 +411,9 @@ public class HotelsToVisit extends AppCompatActivity {
                     i.putStringArrayListExtra("date", Array_date);
                     startActivity(i);
                 }
+                else if(code.equals("no user")){
+                    Toast.makeText(HotelsToVisit.this, "Unauthorized access", Toast.LENGTH_LONG).show();
+                }
 
             }
         });
@@ -375,6 +447,9 @@ public class HotelsToVisit extends AppCompatActivity {
                 else if(code.equals("mda")){
                     Intent i = new Intent(HotelsToVisit.this, MdaProfile.class);
                     startActivity(i);
+                }
+                else if(code.equals("no user")){
+                    Toast.makeText(HotelsToVisit.this, "Register or Login to access", Toast.LENGTH_LONG).show();
                 }
 
             }

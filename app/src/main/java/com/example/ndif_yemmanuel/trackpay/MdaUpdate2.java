@@ -1,7 +1,9 @@
 package com.example.ndif_yemmanuel.trackpay;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -32,7 +34,7 @@ public class MdaUpdate2 extends AppCompatActivity {
     String gotten_Status, gotten_Name, gotten_DimensionCode, gotten_MdaCode, gotten_Email, gotten_paid, gotten_endorsed, gotten_audited, gotten_Queried;
     int project_len;
 
-    public static final String MDA_UPDATE2 = "http://arrearskdsg.com.ng/mobile/mdaupdate";
+    public static final String MDA_UPDATE2 = "https://arrearskdsg.com.ng/mobile/mdaupdate";
 
     ArrayList<String> Array_rl_num = new ArrayList<>();
     ArrayList<String> Array_description = new ArrayList<>();
@@ -47,6 +49,17 @@ public class MdaUpdate2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mda_update2);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         Intent intent = getIntent();
         mda_name = intent.getStringExtra("mda_name");

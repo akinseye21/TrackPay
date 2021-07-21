@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    tools:context=".ChatPage">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/barlayout"
+        android:layout_height="70dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:theme="@style/ToolbarTheme"
+            android:background="#040e67"
+            android:id="@+id/toolbar">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/help"
+                android:layout_marginLeft="30dp"
+                app:civ_border_color="#ffffff"
+                app:civ_border_width="2dp"
+                app:civ_circle_background_color="#ffffff"
+                android:id="@+id/profile_image"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:id="@+id/username"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="10dp"/>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#040e67"
+        app:tabSelectedTextColor="#ffffff"
+        app:tabTextColor="#ffffff"
+        app:tabIndicatorColor="#ffffff"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    </LinearLayout>

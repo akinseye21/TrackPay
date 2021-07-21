@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KD Tracker</string>
+
+    <string name="img1"><u>mai amfani login / rajista</u></string>
+    <string name="signup"><u>sa hannu a nan</u></string>
+    <string name="resend"><u>SAKE AIKAWA</u></string>
+    <string name="open">bude</string>
+    <string name="close">rufe</string>
+
+    <string name="select_language">Zaɓi Yare</string>
+    <string name="need_help">Ana buƙatar taimako?</string>
+    <string name="get_started">FARA</string>
+
+    <string name="note">Da fatan za a zaɓi mai amfani kamar yadda ya dace</string>
+    <string name="login">SHIGA</string>
+    <string name="signup2">RIJISTA</string>
+
+    <string name="enter_email">Da fatan za a shigar da adireshin imel ɗin ku</string>
+    <string name="enter_password">Da fatan za a shigar da kalmar wucewa</string>
+    <string name="forgot_password">Manta kalmar sirri?</string>
+    <string name="dont_have">Ba ku da lissafi?</string>
+
+    <string name="provide_email">Da fatan za a ba da adireshin imel ɗin ku a cikin sararin da ke ƙasa</string>
+    <string name="conti">CIGABA</string>
+    <string name="check">Da fatan za a bincika wasikun ku don ID ɗinku Na Musamman</string>
+    <string name="click">Idan ba a samo ba, da fatan a latsa latsawa da kyau </string>
+
+    <string name="vendor_id">Da fatan za a shigar da ID na Musamman na Mai Siyarwa</string>
+    <string name="repeat_password">Maimaita kalmar wucewa</string>
+
+    <string name="name">Suna</string>
+    <string name="unique_id">ID na musamman:</string>
+    <string name="total_rl">Jimlar RL</string>
+    <string name="paid">An biya</string>
+    <string name="endorsed">Amincewa</string>
+    <string name="audited">An duba</string>
+    <string name="home">Gida</string>
+    <string name="explore_kaduna">Gano Kaduna</string>
+    <string name="help_desk">Taimako</string>
+    <string name="profile">Bayani</string>
+    <string name="more">Kara</string>
+
+    <string name="released_amount">Adadin Saki: </string>
+    <string name="released_date">Ranar Saki: </string>
+    <string name="released_type">Nau\'in Saki: </string>
+    <string name="payment_status">Matsayin Biya: </string>
+
+    <string name="places_to_visit">Wuraren da za\'a ziyarta a kaduna</string>
+    <string name="restaurants">Gidajen abinci</string>
+    <string name="hotels">Otal-otal a kaduna</string>
+    <string name="car_rental">Hayar Mota</string>
+    <string name="shopping_centers">Wuraren Siyayya</string>
+</resources>

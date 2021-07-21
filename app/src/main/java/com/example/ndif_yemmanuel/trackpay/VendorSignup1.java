@@ -1,7 +1,9 @@
 package com.example.ndif_yemmanuel.trackpay;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -29,13 +31,24 @@ public class VendorSignup1 extends AppCompatActivity {
     String gotten_Status, gotten_Email, gotten_Vendornum, gotten_Name;
     ProgressBar progressBar;
 
-    public static final String VENDOR_SIGNUP = "http://arrearskdsg.com.ng/mobile/vlogin";
+    public static final String VENDOR_SIGNUP = "https://arrearskdsg.com.ng/mobile/vlogin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendor_signup1);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         email = findViewById(R.id.edtEmail);
         progressBar = findViewById(R.id.progressBar);

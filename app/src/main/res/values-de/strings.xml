@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KD Tracker</string>
+
+    <string name="img1"><u>BENUTZERLOGIN/ANMELDUNG</u></string>
+    <string name="signup"><u>Hier anmelden</u></string>
+    <string name="resend"><u>ERNEUT SENDEN</u></string>
+    <string name="open">öffnen</string>
+    <string name="close">schließen</string>
+
+    <string name="select_language">Sprache auswählen</string>
+    <string name="need_help">Brauchen Sie Hilfe?</string>
+    <string name="get_started">LOSLEGEN</string>
+
+    <string name="note">Bitte wählen Sie einen entsprechenden Benutzer aus</string>
+    <string name="login">ANMELDUNG</string>
+    <string name="signup2">ANMELDEN</string>
+
+    <string name="enter_email">Geben Sie bitte Ihre Email-Adresse ein</string>
+    <string name="enter_password">Bitte geben Sie Ihr Passwort ein</string>
+    <string name="forgot_password">Passwort vergessen?</string>
+    <string name="dont_have">Sie haben kein Konto?</string>
+
+    <string name="provide_email">Bitte geben Sie Ihre E-Mail-Adresse in das Feld unten ein</string>
+    <string name="conti">FORTSETZEN</string>
+    <string name="check">Bitte überprüfen Sie Ihre E-Mail auf Ihre \'Vendor Unique ID\'.</string>
+    <string name="click">Wenn nicht gefunden, bitte klicken </string>
+
+    <string name="vendor_id">Bitte geben Sie die eindeutige Anbieter-ID ein</string>
+    <string name="repeat_password">Wiederhole das Passwort</string>
+
+    <string name="name">Name</string>
+    <string name="unique_id">Eindeutige ID:</string>
+    <string name="total_rl">Gesamt-RL</string>
+    <string name="paid">Bezahlt</string>
+    <string name="endorsed">Befürwortet</string>
+    <string name="audited">Geprüft</string>
+    <string name="home">Zuhause</string>
+    <string name="explore_kaduna">Erkunden Sie Kaduna</string>
+    <string name="help_desk">Beratungsstelle</string>
+    <string name="profile">Profil</string>
+    <string name="more">Mehr</string>
+
+    <string name="released_amount">Freigabebetrag: </string>
+    <string name="released_date">Veröffentlichungsdatum: </string>
+    <string name="released_type">Freigabetyp: </string>
+    <string name="payment_status">Zahlungsstatus: </string>
+
+    <string name="places_to_visit">Sehenswürdigkeiten in Kaduna</string>
+    <string name="restaurants">Restaurants in Kaduna</string>
+    <string name="hotels">Hotels in Kaduna</string>
+    <string name="car_rental">Autovermietungen</string>
+    <string name="shopping_centers">Einkaufszentren</string>
+</resources>

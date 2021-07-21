@@ -1,7 +1,9 @@
 package com.example.ndif_yemmanuel.trackpay;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -33,7 +35,7 @@ public class VendorSignup2 extends AppCompatActivity {
     String gotten_Status, gotten_Vendornum, gotten_Name, gotten_Email, gotten_paid, gotten_endorsed, gotten_audited;
     int project_len;
 
-    public static final String VENDOR_UPDATE = "http://arrearskdsg.com.ng/mobile/vupdate";
+    public static final String VENDOR_UPDATE = "https://arrearskdsg.com.ng/mobile/vupdate";
 
     ArrayList<String> Array_rl_num = new ArrayList<>();
     ArrayList<String> Array_description = new ArrayList<>();
@@ -48,6 +50,17 @@ public class VendorSignup2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vendor_signup2);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         Intent intent = getIntent();
         vendornum = intent.getStringExtra("vendor_number");

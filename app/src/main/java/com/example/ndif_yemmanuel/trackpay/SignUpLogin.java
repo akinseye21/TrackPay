@@ -1,13 +1,20 @@
 package com.example.ndif_yemmanuel.trackpay;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class SignUpLogin extends AppCompatActivity {
+
+    LinearLayout explore, investment, help_desk, chat;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +22,58 @@ public class SignUpLogin extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up_login);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        explore = findViewById(R.id.explore_kd);
+        investment = findViewById(R.id.investment);
+        help_desk = findViewById(R.id.help_desk);
+        chat = findViewById(R.id.chat);
+
+        explore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SignUpLogin.this, ExploreKaduna.class);
+                i.putExtra("code", "no user");
+                i.putExtra("vendor_name", "Unregistered");
+                i.putExtra("vendor_number", "001");
+                startActivity(i);
+            }
+        });
+
+        investment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(SignUpLogin.this, "Coming soon", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        help_desk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SignUpLogin.this, HelpDesk.class);
+                i.putExtra("code", "no user");
+                i.putExtra("vendor_name", "Unregistered");
+                i.putExtra("vendor_number", "001");
+                startActivity(i);
+            }
+        });
+
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SignUpLogin.this, LiveChat.class);
+                startActivity(i);
+            }
+        });
 
     }
 

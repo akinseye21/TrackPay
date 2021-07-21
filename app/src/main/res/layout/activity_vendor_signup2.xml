@@ -8,6 +8,22 @@
     android:background="#ffffff"
     tools:context="com.example.ndif_yemmanuel.trackpay.VendorSignup2">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/barlayout"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#01a350"
+            app:theme="@style/ToolbarTheme"
+            android:id="@+id/toolbar">
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -15,6 +31,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,7 +54,7 @@
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/main_vendors"
+                app:srcCompat="@drawable/main_vendors"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="120dp"
                 android:id="@+id/img"/>
@@ -51,7 +68,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Please enter Vendor Unique ID"
+                    android:text="@string/vendor_id"
                     android:textStyle="italic"
                     android:textColor="#000000"
                     android:textSize="12dp"
@@ -66,7 +83,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/key"
+                        app:srcCompat="@drawable/key"
                         android:layout_marginLeft="20dp"/>
                     <EditText
                         android:layout_width="match_parent"
@@ -91,7 +108,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Please enter your password"
+                    android:text="@string/enter_password"
                     android:textStyle="italic"
                     android:textColor="#000000"
                     android:textSize="12dp"
@@ -106,7 +123,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/password"
+                        app:srcCompat="@drawable/password"
                         android:layout_marginLeft="20dp"/>
                     <EditText
                         android:layout_width="match_parent"
@@ -132,7 +149,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Repeat password"
+                    android:text="@string/repeat_password"
                     android:textStyle="italic"
                     android:textColor="#000000"
                     android:textSize="12dp"
@@ -147,7 +164,7 @@
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:src="@drawable/password"
+                        app:srcCompat="@drawable/password"
                         android:layout_marginLeft="20dp"/>
                     <EditText
                         android:layout_width="match_parent"
@@ -174,7 +191,7 @@
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_yellow"
-                android:text="SIGNUP"
+                android:text="@string/signup2"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/lin3"
                 android:layout_marginTop="40dp"
