@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ndif_yemmanuel.trackpay">
+    package="created.by.yomibass">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -12,9 +13,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LiveChat"></activity>
+        <activity android:name="created.by.yomibass.StaffProfileUpdate"></activity>
+        <activity android:name="created.by.yomibass.LiveChat" />
         <activity
-            android:name=".MainActivity"
+            android:name="created.by.yomibass.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DBLoginRegister"
+            android:name="created.by.yomibass.DBLoginRegister"
             android:screenOrientation="portrait">
 
             <!-- <intent-filter> -->
@@ -35,84 +37,84 @@
 
         </activity>
         <activity
-            android:name=".DBLogin"
+            android:name="created.by.yomibass.DBLogin"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MessageActivity"
+            android:name="created.by.yomibass.MessageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".DBRegister"
+            android:name="created.by.yomibass.DBRegister"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ChatPage"
+            android:name="created.by.yomibass.ChatPage"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SignUpLogin"
+            android:name="created.by.yomibass.SignUpLogin"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".VendorLogin"
+            android:name="created.by.yomibass.VendorLogin"
             android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".StaffLogin"
+            android:name="created.by.yomibass.StaffLogin"
             android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MdaLogin"
+            android:name="created.by.yomibass.MdaLogin"
             android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".VendorSignup1"
+            android:name="created.by.yomibass.VendorSignup1"
             android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".VendorSignup2"
+            android:name="created.by.yomibass.VendorSignup2"
             android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".VendorDashboard"
+            android:name="created.by.yomibass.VendorDashboard"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".VendorProfile"
+            android:name="created.by.yomibass.VendorProfile"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PlacesView"
+            android:name="created.by.yomibass.PlacesView"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PlacesToVisit"
+            android:name="created.by.yomibass.PlacesToVisit"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ExploreKaduna"
+            android:name="created.by.yomibass.ExploreKaduna"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".RestaurantView"
+            android:name="created.by.yomibass.RestaurantView"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".RestaurantsToVisit"
+            android:name="created.by.yomibass.RestaurantsToVisit"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HelpDesk"
+            android:name="created.by.yomibass.HelpDesk"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ShoppingCentresToVisit"
+            android:name="created.by.yomibass.ShoppingCentresToVisit"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".HotelsToVisit"
+            android:name="created.by.yomibass.HotelsToVisit"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MdaUpdate2"
+            android:name="created.by.yomibass.MdaUpdate2"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MdaUpdate1"
+            android:name="created.by.yomibass.MdaUpdate1"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MdaProfile"
+            android:name="created.by.yomibass.MdaProfile"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".StaffDashboard"
+            android:name="created.by.yomibass.StaffDashboard"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MdaDashboard"
+            android:name="created.by.yomibass.MdaDashboard"
             android:screenOrientation="portrait" />
     </application>
 

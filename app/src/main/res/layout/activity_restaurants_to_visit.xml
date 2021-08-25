@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#ffffff"
     android:id="@+id/drawerlayout"
-    tools:context=".RestaurantsToVisit">
+    tools:context="created.by.yomibass.RestaurantsToVisit">
 
     <RelativeLayout
         android:layout_width="match_parent"

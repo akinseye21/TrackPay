@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#ffffff"
-    tools:context="com.example.ndif_yemmanuel.trackpay.VendorLogin">
+    tools:context="created.by.yomibass.created.by.yomibass.VendorLogin">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="#ffffff"
     android:id="@+id/drawerlayout"
-    tools:context="com.example.ndif_yemmanuel.trackpay.VendorDashboard">
+    tools:context="created.by.yomibass.created.by.yomibass.VendorDashboard">
 
         <RelativeLayout
             android:layout_width="match_parent"

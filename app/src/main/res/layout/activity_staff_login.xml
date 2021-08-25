@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#ffffff"
-    tools:context="com.example.ndif_yemmanuel.trackpay.StaffLogin">
+    tools:context="created.by.yomibass.created.by.yomibass.StaffLogin">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -86,6 +86,7 @@
                     android:layout_height="match_parent"
                     android:background="#ededed"
                     android:layout_marginLeft="10dp"
+                    android:id="@+id/uid"
                     android:textColor="#000000"
                     android:textSize="12dp"
                     android:paddingLeft="10dp"
@@ -93,7 +94,12 @@
             </LinearLayout>
         </LinearLayout>
 
-
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:id="@+id/progressBar"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -127,11 +133,12 @@
                     android:layout_height="match_parent"
                     android:background="#ededed"
                     android:layout_marginLeft="10dp"
+                    android:id="@+id/phone"
                     android:textColor="#000000"
                     android:textSize="12dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:inputType="textPassword"/>
+                    android:inputType="number"/>
             </LinearLayout>
         </LinearLayout>
 

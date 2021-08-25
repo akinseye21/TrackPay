@@ -1,4 +1,4 @@
-package com.example.ndif_yemmanuel.trackpay;
+package created.by.yomibass;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.ndif_yemmanuel.trackpay", appContext.getPackageName());
+        assertEquals("created.by.yomibass", appContext.getPackageName());
     }
 }

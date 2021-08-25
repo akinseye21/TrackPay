@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#ffffff"
-    tools:context="com.example.ndif_yemmanuel.trackpay.VendorSignup2">
+    tools:context="created.by.yomibass.created.by.yomibass.VendorSignup2">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

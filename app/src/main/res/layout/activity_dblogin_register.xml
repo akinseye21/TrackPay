@@ -8,7 +8,7 @@
     android:gravity="center"
     android:padding="16dp"
     android:background="@drawable/bg"
-    tools:context=".DBLoginRegister">
+    tools:context="created.by.yomibass.DBLoginRegister">
 
     <TextView
         android:layout_width="wrap_content"

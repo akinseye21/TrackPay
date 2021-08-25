@@ -6,7 +6,7 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
-    tools:context=".ChatPage">
+    tools:context="created.by.yomibass.ChatPage">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

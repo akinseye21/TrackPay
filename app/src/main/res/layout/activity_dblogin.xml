@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:background="@drawable/bg"
-    tools:context=".DBLogin">
+    tools:context="created.by.yomibass.DBLogin">
 
     <TextView
         android:layout_width="wrap_content"
