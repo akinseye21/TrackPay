@@ -64,7 +64,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/enter_email"
+                android:text="Please enter Employee Number"
                 android:textStyle="italic"
                 android:textColor="#000000"
                 android:textSize="12dp"
@@ -111,7 +111,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/enter_password"
+                android:text="Please enter Phone Number"
                 android:textStyle="italic"
                 android:textColor="#000000"
                 android:textSize="12dp"
@@ -126,7 +126,7 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    app:srcCompat="@drawable/password"
+                    app:srcCompat="@drawable/phone"
                     android:layout_marginLeft="20dp"/>
                 <EditText
                     android:layout_width="match_parent"
